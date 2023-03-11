@@ -3,55 +3,54 @@
 // Londrina Solid is imported directly here as this is the only place where we want to use it
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap');
 
-.background {
+.field-clashers-home-background {
     background-image: radial-gradient(#F1F9EE 70%, #B8DFAB);
 
     width: 100vw;
     min-height: 100vh;
-    overflow-x: hidden;
-}
 
-.markdown {
-    width: 60%;
-    margin: auto;
-    text-align: center;
-    padding: 2rem 0;
-    color: #35703D;
-
-    h1 {
-        font-family: 'Londrina Solid', cursive;
-        font-size: 4em;
-        font-weight: 500;
-    }
-    h2 {
-        font-family: 'Londrina Solid', cursive;
-        font-size: 2em;
-        font-weight: 300;
-    }
-    p {
-        color: #2C5E33;
-    }
-    hr {
-        border: 0.5px dashed;
-        margin: 1rem 2rem;
-    }
-    ol {
-        text-align: left;
-        width: 12.5rem;
+    .markdown {
+        width: 60%;
         margin: auto;
-    }
-    ul {
-        list-style: inside;
-    }
-    table {
-        margin: 1rem auto;
-        border: 1px solid #2C5E33;
-        border-collapse: collapse;
-        th, td {
-            padding: 0.5rem 2rem;
+        text-align: center;
+        padding: 2rem 0;
+        color: #35703D;
+    
+        h1 {
+            font-family: 'Londrina Solid', cursive;
+            font-size: 4em;
+            font-weight: 500;
         }
-        tr {
-            border-top: 1px dashed #2C5E33;
+        h2 {
+            font-family: 'Londrina Solid', cursive;
+            font-size: 2em;
+            font-weight: 300;
+        }
+        p {
+            color: #2C5E33;
+        }
+        hr {
+            border: 0.5px dashed;
+            margin: 1rem 2rem;
+        }
+        ol {
+            text-align: left;
+            width: 12.5rem;
+            margin: auto;
+        }
+        ul {
+            list-style: inside;
+        }
+        table {
+            margin: 1rem auto;
+            border: 1px solid #2C5E33;
+            border-collapse: collapse;
+            th, td {
+                padding: 0.5rem 2rem;
+            }
+            tr {
+                border-top: 1px dashed #2C5E33;
+            }
         }
     }
 }

@@ -21,7 +21,7 @@ class FieldClashersHome extends Component<{}, State> {
 
   render() {
     return (
-      <div className="background">
+      <div className="field-clashers-home-background">
         <ReactMarkdown 
           className="markdown" 
           children={this.state.indexMarkdown}
