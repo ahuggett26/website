@@ -27,7 +27,10 @@ class FieldClashersHome extends Component<{}, State> {
           children={this.state.indexMarkdown}
           remarkPlugins={[remarkGfm]}
           components={{
+            // Disable eslint - it's complaining that the heading doesn't have content, which isn't true 
+            // eslint-disable-next-line
             h2: ({node, ...props}) => <h2 id={this.getIdFromReactNode(props.children[0])} {...props}/>,
+            // eslint-disable-next-line
             h3: ({node, ...props}) => <h3 id={this.getIdFromReactNode(props.children[0])} {...props}/>
           }} />
       </div>
