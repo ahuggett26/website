@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Home from './components/Home';
-import Relaxation from './components/Relaxtion';
 import reportWebVitals from './reportWebVitals';
+import FieldClashersHome from './components/apps/fieldClashers/FieldClashersHome';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
@@ -12,8 +12,8 @@ const router = createBrowserRouter([
     element: <Home/>
   },
   {
-    path: "apps/relaxation",
-    element: <Relaxation/>
+    path: "apps/field-clashers",
+    element: <FieldClashersHome/>
   }
 ])
 
