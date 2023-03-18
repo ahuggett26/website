@@ -1,15 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './components/Home';
+import Home from './components/Home';
 import reportWebVitals from './reportWebVitals';
+import FieldClashersHome from './components/apps/fieldClashers/FieldClashersHome';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home/>
+  },
+  {
+    path: "apps/field-clashers",
+    element: <FieldClashersHome/>
+  }
+])
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

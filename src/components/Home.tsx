@@ -1,6 +1,6 @@
 import './Home.scss';
 
-function App() {
+function Home() {
   return (
     <div className="background">
       <h2 className="coming-soon-title">Coming soon</h2>
@@ -15,4 +15,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
