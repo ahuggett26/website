@@ -15,6 +15,7 @@ class FieldClashersHome extends Component<{}, State> {
   }
 
   async componentDidMount() {
+    document.title = "About Field Clashers"
     const indexMdText = await fetch(index).then(res => res.text());
     this.setState({indexMarkdown: indexMdText});
   }
