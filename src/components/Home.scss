@@ -1,11 +1,11 @@
 @use "../styles/theme";
 
-.background {
-    background-color: theme.$LIGHT_CYAN;
-
+.home-container {
     width: 100vw;
     height: 100vh;
+}
 
+.background {
     text-align: center;
 }
 

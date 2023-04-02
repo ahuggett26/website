@@ -1,0 +1,21 @@
+@use "../../styles/theme";
+
+.container {
+    padding: 2rem 0;
+    text-align: center;
+    color: theme.$CHARCOAL;
+    background: linear-gradient(
+        96deg, theme.$LIGHT_CYAN -25.14%, #FFFFFF 50.32%, theme.$LIGHT_CYAN 124.36%);
+
+    .title {
+        font-family: 'Patrick Hand', cursive;
+        font-size: 4rem;
+        margin: 0;
+    }
+
+    .subtitle {
+        font-weight: 300;
+        font-size: 1.75rem;
+        margin: 0;
+    }
+}
