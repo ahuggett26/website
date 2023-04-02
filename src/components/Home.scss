@@ -4,39 +4,3 @@
     width: 100vw;
     height: 100vh;
 }
-
-.background {
-    text-align: center;
-}
-
-.coming-soon-title {
-    color: theme.$STEEL_BLUE;
-    font-size: 3rem;
-
-    margin: 0;
-    padding: 5rem 0;
-}
-
-.coming-soon-title::after {
-    content: '   ';
-    white-space: pre;
-    width: 52px;
-    animation-name: ellipsisPulse;
-    animation-duration: 2.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate-reverse;
-}
-
-.coming-soon-description {
-    color: theme.$CHARCOAL;
-    font-size: 1.2rem;
-}
-
-@keyframes ellipsisPulse {
-    0% {content: "   "}
-    33% {content: ".  "}
-    66% {content: ".. "}
-    100% {content: "..."}
-    // 100% {content: "...";}
-}

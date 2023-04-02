@@ -4,12 +4,23 @@ import './index.css';
 import Home from './components/Home';
 import reportWebVitals from './reportWebVitals';
 import FieldClashersHome from './components/apps/fieldClashers/FieldClashersHome';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import ComingSoonPage from './components/construction/ComingSoonPage';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>
+    element: <Home/>,
+    children: [
+      {
+        path: "/",
+        element: <Navigate replace to="/about"/>
+      },
+      {
+        path: "about",
+        element: <ComingSoonPage/>
+      }
+    ]
   },
   {
     path: "apps/field-clashers",
