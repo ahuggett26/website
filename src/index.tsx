@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Home from './components/Home';
+import Home from './components/home/Home';
 import reportWebVitals from './reportWebVitals';
 import FieldClashersHome from './components/apps/fieldClashers/FieldClashersHome';
 import ComingSoonPage from './components/construction/ComingSoonPage';
