@@ -4,7 +4,7 @@ import './index.css';
 import Home from './components/home/Home';
 import reportWebVitals from './reportWebVitals';
 import FieldClashersHome from './components/apps/fieldClashers/FieldClashersHome';
-import ComingSoonPage from './components/construction/ComingSoonPage';
+import ComingSoon from './components/construction/ComingSoon';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
       },
       {
         path: "about",
-        element: <ComingSoonPage/>
+        element: <ComingSoon/>
       }
     ]
   },
