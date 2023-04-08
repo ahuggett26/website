@@ -1,15 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Home from './components/Home';
+import Home from './components/home/Home';
 import reportWebVitals from './reportWebVitals';
 import FieldClashersHome from './components/apps/fieldClashers/FieldClashersHome';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import ComingSoon from './components/construction/ComingSoon';
+import Error from './components/construction/Error';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>
+    element: <Home/>,
+    errorElement: <Error/>,
+    children: [
+      {
+        path: "/",
+        element: <Navigate replace to="/about"/>
+      },
+      {
+        path: "about",
+        element: <ComingSoon/>
+      },
+      {
+        path: "education",
+        element: <ComingSoon/>
+      },
+      {
+        path: "work",
+        element: <ComingSoon/>
+      },
+      {
+        path: "portfolio",
+        element: <ComingSoon/>
+      }
+    ]
   },
   {
     path: "apps/field-clashers",
