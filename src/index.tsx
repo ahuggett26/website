@@ -5,12 +5,14 @@ import Home from './components/home/Home';
 import reportWebVitals from './reportWebVitals';
 import FieldClashersHome from './components/apps/fieldClashers/FieldClashersHome';
 import ComingSoon from './components/construction/ComingSoon';
+import Error from './components/construction/Error';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home/>,
+    errorElement: <Error/>,
     children: [
       {
         path: "/",
