@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Home from './components/home/Home';
 import reportWebVitals from './reportWebVitals';
 import FieldClashersHome from './components/apps/fieldClashers/FieldClashersHome';
 import ComingSoon from './components/construction/ComingSoon';
 import Error from './components/construction/Error';
+import Home from './components/home/Home';
+import About from './components/home/about/About';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
       },
       {
         path: "about",
-        element: <ComingSoon/>
+        element: <About/>
       },
       {
         path: "education",
