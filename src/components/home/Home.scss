@@ -3,4 +3,10 @@
 .home-container {
     width: 100vw;
     height: 100vh;
+
+    .home-page-contents {
+        // TODO: Use variable to define the height of the header
+        height: calc(100vh - 211px);
+        overflow: auto;
+    }
 }

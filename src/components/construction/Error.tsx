@@ -1,8 +1,13 @@
 import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
 import './Error.scss';
+import { useEffect } from 'react';
 
 function Error() {
     const error = useRouteError();
+
+    useEffect(() => {
+        document.title = "ahuggett.uk"
+    });
 
     return (
         <div className='error-container'>

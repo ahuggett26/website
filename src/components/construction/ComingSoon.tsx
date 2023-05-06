@@ -2,6 +2,10 @@ import { Component } from 'react';
 import './ComingSoon.scss';
 
 class ComingSoon extends Component {
+    componentDidMount() {
+        document.title = "ahuggett.uk"
+    }
+
     render() {
         return (
             <div className='construction-container'>
