@@ -11,6 +11,10 @@ import image7 from '../../../resources/images/about/stanley-park.jpg';
 import image8 from '../../../resources/images/about/vancouver-lake.jpg';
 
 class About extends Component {
+    componentDidMount() {
+        document.title = "About - ahuggett.uk"
+    }
+
     render() {
         const images = [
             new Image(image1, "A fountain in Estonia"),
