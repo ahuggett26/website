@@ -8,6 +8,7 @@ import Error from './components/construction/Error';
 import Home from './components/home/Home';
 import About from './components/home/about/About';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
+import Education from './components/home/education/Education';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
       },
       {
         path: "education",
-        element: <ComingSoon/>
+        element: <Education/>
       },
       {
         path: "work",
