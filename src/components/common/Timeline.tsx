@@ -2,7 +2,7 @@ import { Component } from 'react';
 import './Timeline.scss';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import TimelineItem from './TimelineItem';
 
 export class InstanceInTime {
   startDate: Date;
@@ -45,20 +45,23 @@ class Timeline extends Component<Props, State> {
   }
 
   render() {
-    const activeTimeInstance = this.props.instances[this.state.activeInstance];
-    const dateOptions: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long' }
     return (
       <div className='timeline-container'>
         <div className='timeline-left-controls'>
-          <div className='timeline-dates'>
-            {activeTimeInstance.startDate.toLocaleDateString("en-GB", dateOptions)}
-            &nbsp; - &nbsp;<br/>
-            {activeTimeInstance.endDate.toLocaleDateString("en-GB", dateOptions)}
-          </div>
-          <div className='timeline-center'>
-            <LazyLoadImage src={activeTimeInstance.iconSrc} className="timeline-icon" />
-            <span className='timeline-pointer'/>
-          </div>
+          {this.props.instances.map((instance, index) => 
+            <>
+              <TimelineItem
+                instance={instance} 
+                selected={index === this.state.activeInstance}
+                onClick={() => {
+                  this.updateMarkdownString(index);
+                  this.setState({activeInstance: index});
+                }} />
+              {index === this.props.instances.length - 1 ? null :
+                <span className='timeline-item-separator'/>
+              }
+            </>
+          )}
         </div>
         <hr/>
         <div className='timeline-right-pane'>
