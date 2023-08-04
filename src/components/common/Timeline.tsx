@@ -40,7 +40,6 @@ class Timeline extends Component<Props, State> {
   }
 
   async componentDidMount() {
-    document.title = "Education - ahuggett.uk"
     this.updateMarkdownString(0)
   }
 

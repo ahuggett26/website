@@ -7,6 +7,10 @@ import degreeMd from './Degree.md';
 import secondary from './Secondary.md';
 
 class Education extends Component {
+  componentDidMount() {
+    document.title = "Education - ahuggett.uk"
+  }
+
   render() {
     const educationInstances = [
       new InstanceInTime(new Date("Oct 2018"), new Date("Nov 2021"), adaLogo, degreeMd),
