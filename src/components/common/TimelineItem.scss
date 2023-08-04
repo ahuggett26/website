@@ -19,6 +19,7 @@
         border: 3px solid theme.$CHARCOAL;
         border-radius: 50%;
         margin: auto;
+        cursor: pointer;
     }
 
     .timeline-icon-active {
@@ -27,6 +28,7 @@
         height: 4rem;
         border: 5px solid theme.$CHARCOAL;
         box-shadow: 0 4px 4px 0 theme.$STEEL_BLUE;
+        cursor: default;
     }
 
     .timeline-pointer {

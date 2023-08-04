@@ -68,7 +68,8 @@ class Timeline extends Component<Props, State> {
           <ReactMarkdown 
             className="markdown" 
             children={this.state.instanceMd}
-            remarkPlugins={[remarkGfm]} />
+            remarkPlugins={[remarkGfm]}
+            linkTarget="_blank" />
         </div>
       </div>
     );
