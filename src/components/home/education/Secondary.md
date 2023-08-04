@@ -1,23 +1,26 @@
 # Secondary
 
-## A-Levels
+My secondary education took place at [Sackville School, East Grinstead](https://sackvilleschool.org.uk/), where I took my GCSEs in 2016, before continuing on to [Sackville 6th Form](https://sixthform.sackvilleschool.org.uk/), where I took my A-Levels in 2018.
 
-From [Sackville 6th Form, East Grinstead](https://sixthform.sackvilleschool.org.uk/)
+## A-Level
 
-- Maths
-- Further Maths
-- Computer Science
-- Physics
+- Computer Science: A
+- Mathematics: A
+- Further Mathematics: B
+
+### AS-Level
+
+- Physics: B
 
 ## GCSEs
 
-From [Sackville School, East Grinstead](https://sackvilleschool.org.uk/)
+I have 14 GCSEs from A*-D, including: 
 
-- Maths
-- IT
-- Physics
-- Biology
-- Chemistry
-- English Language
-- English Literature
-....
+- Mathematics: A*
+- Further Mathematics: A*
+- Information and Communication Technology: A
+- Physics: A
+- Biology: A*
+- Chemistry: A
+- English Language: A
+- English Literature: A*
