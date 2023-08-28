@@ -20,13 +20,16 @@ const TimelineItem = (props: Props): JSX.Element => {
             <div className='timeline-dates'>
                 {props.instance.startDate.toLocaleDateString("en-GB", dateOptions)}
                 &nbsp; - &nbsp;<br/>
-                {props.instance.endDate.toLocaleDateString("en-GB", dateOptions)}
+                {props.instance.endDate 
+                    ? props.instance.endDate.toLocaleDateString("en-GB", dateOptions)
+                    : "current"}
             </div>
         }
         
         <div className='timeline-center'>
             <LazyLoadImage 
                 src={props.instance.iconSrc} 
+                style={{backgroundColor: props.instance.iconBackground, padding: props.instance.iconPadding ? "4px" : 0}}
                 className={iconScss}
                 onClick={() => props.onClick()} />
             <span className={pointerScss} />
