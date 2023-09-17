@@ -8,7 +8,7 @@ import './Experience.scss';
 
 class Experience extends Component {
   componentDidMount() {
-    document.title = "Education - ahuggett.uk"
+    document.title = "Experience - ahuggett.uk"
   }
 
   render() {
