@@ -13,8 +13,8 @@ class Education extends Component {
 
   render() {
     const educationInstances = [
-      new InstanceInTime(new Date("Oct 2018"), new Date("Nov 2021"), adaLogo, degreeMd),
-      new InstanceInTime(new Date("Sep 2011"), new Date("May 2018"), sackvilleLogo, secondary)
+      new InstanceInTime(new Date("Oct 2018"), new Date("Nov 2021"), adaLogo, undefined, false, degreeMd),
+      new InstanceInTime(new Date("Sep 2011"), new Date("May 2018"), sackvilleLogo, undefined, true, secondary)
     ];
     return (
       <div className='education-container'>

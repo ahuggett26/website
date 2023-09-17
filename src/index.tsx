@@ -10,6 +10,7 @@ import Home from './components/home/Home';
 import About from './components/home/about/About';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import Education from './components/home/education/Education';
+import Experience from './components/home/experience/Experience';
 
 const router = createBrowserRouter([
   {
@@ -30,8 +31,8 @@ const router = createBrowserRouter([
         element: <Education/>
       },
       {
-        path: "work",
-        element: <ComingSoon/>
+        path: "experience",
+        element: <Experience/>
       },
       {
         path: "portfolio",

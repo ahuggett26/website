@@ -6,14 +6,18 @@ import TimelineItem from './TimelineItem';
 
 export class InstanceInTime {
   startDate: Date;
-  endDate: Date;
+  endDate: Date | undefined;
   iconSrc: string; 
+  iconBackground: string | undefined;
+  iconPadding: boolean;
   mdContents: string;
 
-  constructor(start: Date, end: Date, icon: string, markdown: string) {
+  constructor(start: Date, end: Date | undefined, icon: string, iconBack: string | undefined, iconPadding: boolean, markdown: string) {
     this.startDate = start;
     this.endDate = end;
     this.iconSrc = icon;
+    this.iconBackground = iconBack;
+    this.iconPadding = iconPadding;
     this.mdContents = markdown;
   }
 }
