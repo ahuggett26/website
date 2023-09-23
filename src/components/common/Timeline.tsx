@@ -1,18 +1,25 @@
-import { useEffect, useState } from 'react';
-import styles from './Timeline.module.scss';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import TimelineItem from './TimelineItem';
+import React, { useEffect, useState } from "react";
+import styles from "./Timeline.module.scss";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import TimelineItem from "./TimelineItem";
 
 export class InstanceInTime {
   startDate: Date;
   endDate: Date | undefined;
-  iconSrc: string; 
+  iconSrc: string;
   iconBackground: string | undefined;
   iconPadding: boolean;
   mdContents: string;
 
-  constructor(start: Date, end: Date | undefined, icon: string, iconBack: string | undefined, iconPadding: boolean, markdown: string) {
+  constructor(
+    start: Date,
+    end: Date | undefined,
+    icon: string,
+    iconBack: string | undefined,
+    iconPadding: boolean,
+    markdown: string,
+  ) {
     this.startDate = start;
     this.endDate = end;
     this.iconSrc = icon;
@@ -23,50 +30,58 @@ export class InstanceInTime {
 }
 
 interface Props {
-  instances: InstanceInTime[]
+  instances: InstanceInTime[];
 }
 
 const Timeline = (props: Props) => {
   const [activeInstance, setActiveInstance] = useState(0);
   const [instanceMd, setInstanceMd] = useState("");
 
-  function updateMarkdownString(instanceNo: number) {
+  /**
+   *
+   * @param instanceNo
+   */
+  async function updateMarkdownString(instanceNo: number) {
     const markdown = props.instances[instanceNo].mdContents;
-    fetch(markdown).then(res => res.text()).then(text => setInstanceMd(text));
+    fetch(markdown)
+      .then((res) => res.text())
+      .then((text) => setInstanceMd(text));
   }
 
   useEffect(() => {
     updateMarkdownString(0);
-  }, [])
+  }, []);
 
   return (
-    <div className={styles['timeline-container']}>
-      <div className={styles['left-controls']}>
-        {props.instances.map((instance, index) => 
-          <>
+    <div className={styles["timeline-container"]}>
+      <div className={styles["left-controls"]}>
+        {props.instances.map((instance, index) => (
+          <React.Fragment key={"timeline-item-" + index}>
             <TimelineItem
-              instance={instance} 
+              instance={instance}
               selected={index === activeInstance}
               onClick={() => {
                 updateMarkdownString(index);
                 setActiveInstance(index);
-              }} />
-            {index === props.instances.length - 1 ? null :
-              <span className={styles['item-separator']}/>
-            }
-          </>
-        )}
+              }}
+            />
+            {index === props.instances.length - 1 ? null : (
+              <span className={styles["item-separator"]} />
+            )}
+          </React.Fragment>
+        ))}
       </div>
-      <hr/>
-      <div className={styles['right-pane']}>
-        <ReactMarkdown 
-          className="markdown" 
+      <hr />
+      <div className={styles["right-pane"]}>
+        <ReactMarkdown
+          className="markdown"
           children={instanceMd}
           remarkPlugins={[remarkGfm]}
-          linkTarget="_blank" />
+          linkTarget="_blank"
+        />
       </div>
     </div>
   );
-}
+};
 
 export default Timeline;

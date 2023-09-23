@@ -22,4 +22,4 @@ For the first 2 years of my apprenticeship, I worked towards a foundation degree
 
 Modules included in the foundation degree included algorithms, data structures, computing technologies and project management including the software development lifecycle and agile methodologies.
 
-Programming in this first year was primarily done in JavaScript, whereas in my final year I would also use Java, TypeScript and Python among others. 
+Programming in this first year was primarily done in JavaScript, whereas in my final year I would also use Java, TypeScript and Python among others.
