@@ -2,7 +2,7 @@ import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
 import './Error.scss';
 import { useEffect } from 'react';
 
-function Error() {
+const Error = () => {
     const error = useRouteError();
 
     useEffect(() => {
