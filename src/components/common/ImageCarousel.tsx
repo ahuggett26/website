@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './ImageCarousel.scss';
+import styles from'./ImageCarousel.module.scss';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
@@ -31,24 +31,24 @@ const ImageCarousel = (props: Props) => {
     // current image size: 1344x756
     const image = props.images[imageIndex];
     return (
-        <div className="image-carousel">
-            <div className="image-carousel-image-holder">
+        <div className={styles["image-carousel"]}>
+            <div className={styles["image-holder"]}>
                 <LazyLoadImage
-                    className="image-carousel-image"
+                    className={styles.image}
                     src={image.src}
                     alt={image.alt}
                     effect="blur"/>
-                <div className="image-carousel-hover">
+                <div className={styles.hover}>
                     {props.hoverText}
                 </div>
             </div>
-            <div className="image-carousel-radio-buttons">
+            <div className={styles["radio-buttons"]}>
                 {props.images.map((_img, index) => {
                     const key = "image-carousel-radio-" + index;
                     return (
-                        <span className="image-carousel-radio-btn-holder" key={key}>
+                        <span className={styles["radio-btn-holder"]} key={key}>
                             <input type="radio" name="currImg" defaultChecked={index === imageIndex} onChange={() => onImageChanged(index)}/>
-                            <span className="image-carousel-custom-radio"/>
+                            <span className={styles["custom-radio"]}/>
                         </span>
                     )
                 })}

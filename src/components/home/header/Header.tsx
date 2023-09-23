@@ -1,12 +1,12 @@
-import './Header.scss';
+import styles from './Header.module.scss';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <header className='container'>
-            <h1 className='title'>ahuggett.uk</h1>
-            <nav className='tabs-holder'>
-                <ul className='tabs'>
+        <header className={styles.container}>
+            <h1 className={styles.title}>ahuggett.uk</h1>
+            <nav className={styles['tabs-holder']}>
+                <ul className={styles.tabs}>
                     <li>
                         <Link to="/about">About</Link>
                     </li>

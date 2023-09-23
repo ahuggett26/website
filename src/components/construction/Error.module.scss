@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
 
-    .error-information {
+    .information {
         display: inline-block;
         padding: 5rem 2rem;
         margin: 5rem 0;
@@ -15,18 +15,18 @@
         z-index: 10;
         background-color: white;
 
-        .error-siren-emoji {
+        .siren-emoji {
             font-size: 5rem;
             padding: 2rem 0;
         }
 
-        .error-title {
+        .title {
             color: theme.$CHARCOAL;
             font-size: 3rem;
             margin: 0;
         }
     
-        .error-description {
+        .description {
             color: theme.$CHARCOAL;
             font-size: 1.2rem;
             padding: 0 2rem;
@@ -37,7 +37,7 @@
 $error-red: #ff6060e0;
 $error-black: rgba(0, 0, 0, 0.4);
 
-.error-background {
+.background {
     position: absolute;
     left: 0;
     right: 0;

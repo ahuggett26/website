@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
 
-    .construction-info {
+    .info {
         text-align: center;
         padding: 5rem 0;
         margin: 5rem 0;
@@ -19,13 +19,13 @@
             padding: 2rem 0;
         }
     
-        .coming-soon-title {
+        .title {
             color: theme.$CHARCOAL;
             font-size: 3rem;
             margin: 0;
         }
     
-        .coming-soon-description {
+        .description {
             color: theme.$CHARCOAL;
             font-size: 1.2rem;
             padding: 0 2rem;
@@ -36,7 +36,7 @@
 $construction-orange: #ffad60e0;
 $construction-black: rgba(0, 0, 0, 0.4);
 
-.construction-background {
+.background {
     position: absolute;
     left: 0;
     right: 0;

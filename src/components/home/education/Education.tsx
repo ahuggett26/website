@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import './Education.scss';
+import styles from './Education.module.scss';
 import Timeline, { InstanceInTime } from '../../common/Timeline';
 import adaLogo from '../../../resources/images/education/ada-logo.svg';
 import sackvilleLogo from '../../../resources/images/education/sackville-logo.svg';
@@ -16,7 +16,7 @@ const Education = () => {
     new InstanceInTime(new Date("Sep 2011"), new Date("May 2018"), sackvilleLogo, undefined, true, secondary)
   ];
   return (
-    <div className='education-container'>
+    <div className={styles['education-container']}>
       <Timeline instances={educationInstances} />
     </div>
   );

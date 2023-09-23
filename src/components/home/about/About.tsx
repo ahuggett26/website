@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import './About.scss';
+import styles from './About.module.scss';
 import ImageCarousel, { Image } from "../../common/ImageCarousel";
 import image1 from '../../../resources/images/about/estonia-fountain.jpg';
 import image2 from '../../../resources/images/about/georgia-batumi.jpg';
@@ -27,7 +27,7 @@ const About = () => {
     const hoverText = "I don't take any selfies, so here are some of my favourite pictures that I've taken on my travels recently."
                 + "\nI'm also not the best photographer, as you can probably see!";
     return (
-        <div className="about-container">
+        <div className={styles["about-container"]}>
             <p>
                 Hi! My name is Andrew Huggett, I am a software engineer from West Sussex, in the south of England.<br/>
                 I currently work for Diffblue, an Oxford based company that produces AI for code.

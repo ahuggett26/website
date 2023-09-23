@@ -1,12 +1,12 @@
 import { Outlet } from 'react-router-dom';
-import './Home.scss';
+import styles from './Home.module.scss';
 import Header from './header/Header';
 
 const Home = () => {
   return (
-    <div className='home-container'>
+    <div className={styles['home-container']}>
       <Header/>
-      <div className='home-page-contents'>
+      <div className={styles['home-page-contents']}>
         <Outlet/>
       </div>
     </div>

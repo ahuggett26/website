@@ -1,4 +1,4 @@
-import './TimelineItem.scss';
+import styles from './TimelineItem.module.scss';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { InstanceInTime } from "./Timeline";
 
@@ -12,12 +12,12 @@ interface Props {
 }
 
 const TimelineItem = (props: Props): JSX.Element => {
-    const pointerScss = 'timeline-pointer' + (props.selected ? "-active" : "");
-    const iconScss = 'timeline-icon' + (props.selected ? "-active" : "");
+    const pointerClass = 'timeline-pointer' + (props.selected ? "-active" : "");
+    const iconClass = 'timeline-icon' + (props.selected ? "-active" : "");
     return (
       <>
         {!props.selected ? null : 
-            <div className='timeline-dates'>
+            <div className={styles['timeline-dates']}>
                 {props.instance.startDate.toLocaleDateString("en-GB", dateOptions)}
                 &nbsp; - &nbsp;<br/>
                 {props.instance.endDate 
@@ -26,13 +26,13 @@ const TimelineItem = (props: Props): JSX.Element => {
             </div>
         }
         
-        <div className='timeline-center'>
+        <div className={styles['timeline-center']}>
             <LazyLoadImage 
                 src={props.instance.iconSrc} 
                 style={{backgroundColor: props.instance.iconBackground, padding: props.instance.iconPadding ? "4px" : 0}}
-                className={iconScss}
+                className={styles[iconClass]}
                 onClick={() => props.onClick()} />
-            <span className={pointerScss} />
+            <span className={styles[pointerClass]} />
         </div>
       </>
     )

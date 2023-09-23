@@ -4,7 +4,7 @@ import diffblueLogo from '../../../resources/images/experience/diffblue-logo.svg
 import googleLogo from '../../../resources/images/experience/google-logo.svg';
 import diffblueMd from './Diffblue.md';
 import googleMd from './Google.md';
-import './Experience.scss';
+import styles from './Experience.module.scss';
 
 const Experience = () => {
   useEffect(() => {
@@ -16,7 +16,7 @@ const Experience = () => {
     new InstanceInTime(new Date("Oct 2018"), new Date("Oct 2021"), googleLogo, undefined, true, googleMd)
   ];
   return (
-    <div className='experience-container'>
+    <div className={styles['experience-container']}>
       <Timeline instances={educationInstances} />
     </div>
   );

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './Timeline.scss';
+import styles from './Timeline.module.scss';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import TimelineItem from './TimelineItem';
@@ -40,8 +40,8 @@ const Timeline = (props: Props) => {
   }, [])
 
   return (
-    <div className='timeline-container'>
-      <div className='timeline-left-controls'>
+    <div className={styles['timeline-container']}>
+      <div className={styles['left-controls']}>
         {props.instances.map((instance, index) => 
           <>
             <TimelineItem
@@ -52,13 +52,13 @@ const Timeline = (props: Props) => {
                 setActiveInstance(index);
               }} />
             {index === props.instances.length - 1 ? null :
-              <span className='timeline-item-separator'/>
+              <span className={styles['item-separator']}/>
             }
           </>
         )}
       </div>
       <hr/>
-      <div className='timeline-right-pane'>
+      <div className={styles['right-pane']}>
         <ReactMarkdown 
           className="markdown" 
           children={instanceMd}

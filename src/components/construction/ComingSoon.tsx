@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import './ComingSoon.scss';
+import styles from './ComingSoon.module.scss';
 
 const ComingSoon = () => {
     useEffect(() => {
@@ -7,18 +7,18 @@ const ComingSoon = () => {
     })
 
     return (
-        <div className='construction-container'>
-            <div className="construction-info">
-                <h2 className="coming-soon-title">Coming soon</h2>
-                <div className='construction-emoji'>🏗️</div>
-                <div className="coming-soon-description">
+        <div className={styles['construction-container']}>
+            <div className={styles.info}>
+                <h2 className={styles.title}>Coming soon</h2>
+                <div className={styles['construction-emoji']}>🏗️</div>
+                <div className={styles.description}>
                     Thank you for your interest!
                     <br/>
                     This section of the website is currently in construction but will be up soon.
                     <br/>
                 </div>
             </div>
-            <div className='construction-background'/>
+            <div className={styles.background}/>
         </div>
     );
 }

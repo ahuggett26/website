@@ -1,4 +1,4 @@
-import './FieldClashersHome.scss';
+import styles from './FieldClashersHome.module.scss';
 import { ReactNode, useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -13,9 +13,9 @@ const FieldClashersHome = () => {
   }, []);
 
   return (
-    <div className="field-clashers-home-background">
+    <div className={styles["field-clashers-home-background"]}>
       <ReactMarkdown 
-        className="markdown" 
+        className={styles.markdown} 
         children={indexMarkdown}
         remarkPlugins={[remarkGfm]}
         components={{
