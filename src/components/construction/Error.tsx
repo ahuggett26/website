@@ -1,6 +1,6 @@
+import { useEffect } from "react";
 import { isRouteErrorResponse, useRouteError } from "react-router-dom";
 import styles from "./Error.module.scss";
-import { useEffect } from "react";
 
 const Error = () => {
   const error = useRouteError();

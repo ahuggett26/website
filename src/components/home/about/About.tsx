@@ -1,6 +1,4 @@
 import { useEffect } from "react";
-import styles from "./About.module.scss";
-import ImageCarousel, { Image } from "../../common/ImageCarousel";
 import image1 from "../../../resources/images/about/estonia-fountain.jpg";
 import image2 from "../../../resources/images/about/georgia-batumi.jpg";
 import image3 from "../../../resources/images/about/georgia-roadside.jpg";
@@ -9,6 +7,8 @@ import image5 from "../../../resources/images/about/niagara-whirlpool.jpg";
 import image6 from "../../../resources/images/about/squamish-forest.jpg";
 import image7 from "../../../resources/images/about/stanley-park.jpg";
 import image8 from "../../../resources/images/about/vancouver-lake.jpg";
+import ImageCarousel, { Image } from "../../common/ImageCarousel";
+import styles from "./About.module.scss";
 
 const About = () => {
   useEffect(() => {

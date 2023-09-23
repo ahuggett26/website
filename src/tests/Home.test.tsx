@@ -1,7 +1,7 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
-import Home from "../components/home/Home";
+import React from "react";
 import { BrowserRouter } from "react-router-dom";
+import Home from "../components/home/Home";
 
 test("renders header title", () => {
   render(

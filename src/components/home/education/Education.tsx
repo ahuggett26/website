@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import styles from "./Education.module.scss";
-import Timeline, { InstanceInTime } from "../../common/Timeline";
 import adaLogo from "../../../resources/images/education/ada-logo.svg";
 import sackvilleLogo from "../../../resources/images/education/sackville-logo.svg";
+import Timeline, { InstanceInTime } from "../../common/Timeline";
 import degreeMd from "./Degree.md";
+import styles from "./Education.module.scss";
 import secondary from "./Secondary.md";
 
 const Education = () => {

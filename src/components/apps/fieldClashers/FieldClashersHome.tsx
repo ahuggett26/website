@@ -1,7 +1,7 @@
-import styles from "./FieldClashersHome.module.scss";
 import { ReactNode, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import styles from "./FieldClashersHome.module.scss";
 import index from "./index.md";
 
 const FieldClashersHome = () => {

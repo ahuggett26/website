@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import styles from "./Timeline.module.scss";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import styles from "./Timeline.module.scss";
 import TimelineItem from "./TimelineItem";
 
 export class InstanceInTime {

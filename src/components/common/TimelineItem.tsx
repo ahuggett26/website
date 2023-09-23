@@ -1,7 +1,7 @@
-import styles from "./TimelineItem.module.scss";
+import { MouseEventHandler } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { InstanceInTime } from "./Timeline";
-import { MouseEventHandler } from "react";
+import styles from "./TimelineItem.module.scss";
 
 const dateOptions: Intl.DateTimeFormatOptions = {
   year: "numeric",

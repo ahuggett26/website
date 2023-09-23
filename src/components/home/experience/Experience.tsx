@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import Timeline, { InstanceInTime } from "../../common/Timeline";
 import diffblueLogo from "../../../resources/images/experience/diffblue-logo.svg";
 import googleLogo from "../../../resources/images/experience/google-logo.svg";
+import Timeline, { InstanceInTime } from "../../common/Timeline";
 import diffblueMd from "./Diffblue.md";
-import googleMd from "./Google.md";
 import styles from "./Experience.module.scss";
+import googleMd from "./Google.md";
 
 const Experience = () => {
   useEffect(() => {

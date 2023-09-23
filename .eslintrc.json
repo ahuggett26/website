@@ -13,12 +13,21 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "react"],
+  "plugins": ["@typescript-eslint", "react", "import"],
   "rules": {
     // suppress errors for missing 'import React' in files
     "react/react-in-jsx-scope": "off",
     // suppress errors for passing in children as a prop
     // this is required for react-markdown parser
-    "react/no-children-prop": "off"
+    "react/no-children-prop": "off",
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "caseInsensitive": true,
+          "order": "asc"
+        }
+      }
+    ]
   }
 }

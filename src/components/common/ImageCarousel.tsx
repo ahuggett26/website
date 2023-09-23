@@ -1,6 +1,6 @@
 import { useState } from "react";
-import styles from "./ImageCarousel.module.scss";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import styles from "./ImageCarousel.module.scss";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 interface Props {
