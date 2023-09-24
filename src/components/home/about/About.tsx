@@ -10,6 +10,11 @@ import image8 from "../../../resources/images/about/vancouver-lake.jpg";
 import ImageCarousel, { Image } from "../../common/ImageCarousel";
 import styles from "./About.module.scss";
 
+/**
+ * A view for display at /about.
+ *
+ * @returns JSX element of component
+ */
 const About = () => {
   useEffect(() => {
     document.title = "About - ahuggett.uk";

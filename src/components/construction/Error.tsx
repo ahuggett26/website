@@ -2,6 +2,11 @@ import { useEffect } from "react";
 import { isRouteErrorResponse, useRouteError } from "react-router-dom";
 import styles from "./Error.module.scss";
 
+/**
+ * Component to display when the app has an error (e.g incorrect URL).
+ *
+ * @returns JSX element of component
+ */
 const Error = () => {
   const error = useRouteError();
 
@@ -28,8 +33,10 @@ const Error = () => {
 };
 
 /**
+ * Header to display in the error component.
  *
- * @param error
+ * @param error The error we have encountered.
+ * @returns JSX element of header.
  */
 function getErrorHeader(error: unknown) {
   if (isRouteErrorResponse(error)) {
@@ -42,8 +49,10 @@ function getErrorHeader(error: unknown) {
 }
 
 /**
+ * Details about the error that we should show to the user.
  *
- * @param error
+ * @param error The error we have encountered.
+ * @returns JSX element of error details.
  */
 function getErrorDetails(error: unknown) {
   if (isRouteErrorResponse(error) && error.error) {

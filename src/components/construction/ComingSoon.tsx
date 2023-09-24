@@ -1,6 +1,11 @@
 import { useEffect } from "react";
 import styles from "./ComingSoon.module.scss";
 
+/**
+ * Component to display as a placeholder when a page or section is incomplete.
+ *
+ * @returns JSX element of component
+ */
 const ComingSoon = () => {
   useEffect(() => {
     document.title = "ahuggett.uk";

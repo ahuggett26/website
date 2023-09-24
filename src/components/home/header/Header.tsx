@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
 import styles from "./Header.module.scss";
 
+/**
+ * The header to display at the top of each page.
+ *
+ * Contains navigation links to other pages.
+ *
+ * @returns JSX element of component
+ */
 const Header = () => {
   return (
     <header className={styles.container}>

@@ -6,6 +6,11 @@ import diffblueMd from "./Diffblue.md";
 import styles from "./Experience.module.scss";
 import googleMd from "./Google.md";
 
+/**
+ * A view for display at /education.
+ *
+ * @returns JSX element of component
+ */
 const Experience = () => {
   useEffect(() => {
     document.title = "Experience - ahuggett.uk";

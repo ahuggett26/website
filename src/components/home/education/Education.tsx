@@ -6,6 +6,11 @@ import degreeMd from "./Degree.md";
 import styles from "./Education.module.scss";
 import secondary from "./Secondary.md";
 
+/**
+ * A view for display at /education.
+ *
+ * @returns JSX element of component
+ */
 const Education = () => {
   useEffect(() => {
     document.title = "Education - ahuggett.uk";

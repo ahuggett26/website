@@ -4,12 +4,19 @@ import remarkGfm from "remark-gfm";
 import styles from "./Timeline.module.scss";
 import TimelineItem from "./TimelineItem";
 
+/** Object representing an instance for display in the Timeline component */
 export class InstanceInTime {
+  /** Date that the instance started. */
   startDate: Date;
+  /** Date that the instance ended. If undefined, it is assumed the instance is ongoing. */
   endDate: Date | undefined;
+  /** Icon representing the instance. */
   iconSrc: string;
+  /** Background color for the icon. If undefined, no background is added. */
   iconBackground: string | undefined;
+  /** True if internal padding for the icon should be added. */
   iconPadding: boolean;
+  /** Markdown contents to display when the instance is selected. */
   mdContents: string;
 
   constructor(
@@ -30,16 +37,27 @@ export class InstanceInTime {
 }
 
 interface Props {
+  /** Instances for display in the timeline component. */
   instances: InstanceInTime[];
 }
 
+/**
+ * Timeline component.
+ *
+ * Displays multiple {@link InstanceInTime} objects. Each instance has a navigable button in a left panel,
+ * with markdown text in the larger right panel containing text of the currently selected instance.
+ *
+ * @param props {@link Props}
+ * @returns JSX element of component
+ */
 const Timeline = (props: Props) => {
   const [activeInstance, setActiveInstance] = useState(0);
   const [instanceMd, setInstanceMd] = useState("");
 
   /**
+   * Updates the markdown of the timeline when a new timeline item is displayed.
    *
-   * @param instanceNo
+   * @param instanceNo The index in the timeline that we want the markdown for.
    */
   async function updateMarkdownString(instanceNo: number) {
     const markdown = props.instances[instanceNo].mdContents;

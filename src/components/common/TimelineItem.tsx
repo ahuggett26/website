@@ -3,17 +3,30 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { InstanceInTime } from "./Timeline";
 import styles from "./TimelineItem.module.scss";
 
+/** Date formatting for the timeline instances. */
 const dateOptions: Intl.DateTimeFormatOptions = {
   year: "numeric",
   month: "long",
 };
 
 interface Props {
+  /** The timeline instance represented by this item. */
   instance: InstanceInTime;
+  /** True if this timeline instance is currently selected. */
   selected: boolean;
+  /** Action to perform when the instance is selected. */
   onClick: MouseEventHandler;
 }
 
+/**
+ * A clickable timeline item.
+ *
+ * Representing an instance of time, this item is displayed in the Timeline component
+ * and can be clicked to select the timeline instance for viewing.
+ *
+ * @param props {@link Props}
+ * @returns JSX element of component
+ */
 const TimelineItem = (props: Props): JSX.Element => {
   const pointerClass = "timeline-pointer" + (props.selected ? "-active" : "");
   const iconClass = "timeline-icon" + (props.selected ? "-active" : "");

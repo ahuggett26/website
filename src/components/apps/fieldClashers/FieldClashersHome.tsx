@@ -4,6 +4,11 @@ import remarkGfm from "remark-gfm";
 import styles from "./FieldClashersHome.module.scss";
 import index from "./index.md";
 
+/**
+ * Component for the Field Clashers documentation.
+ *
+ * @returns JSX element of the component
+ */
 const FieldClashersHome = () => {
   const [indexMarkdown, setIndexMarkdown] = useState("");
 
@@ -24,11 +29,11 @@ const FieldClashersHome = () => {
           // Disable eslint - it's complaining that the heading doesn't have content, which isn't true
           h2: ({ ...props }) => (
             // eslint-disable-next-line
-            <h2 id={getIdFromReactNode(props.children[0])} {...props} />
+            <h2 id={getHeaderId(props.children[0])} {...props} />
           ),
           h3: ({ ...props }) => (
             // eslint-disable-next-line
-            <h3 id={getIdFromReactNode(props.children[0])} {...props} />
+            <h3 id={getHeaderId(props.children[0])} {...props} />
           ),
         }}
       />
@@ -36,10 +41,14 @@ const FieldClashersHome = () => {
   );
 
   /**
+   * Generates a valid id for the header represented by the node.
+   *
+   * This id is required to enable navigation to a header via ..url#header-name.
    *
    * @param node
+   * @returns The id for the given header
    */
-  function getIdFromReactNode(node: ReactNode): string {
+  function getHeaderId(node: ReactNode): string {
     if (!node) return "";
     return node
       .toString()

@@ -4,12 +4,17 @@ import styles from "./ImageCarousel.module.scss";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 interface Props {
+  /** All images that should be inside the image carousel. */
   images: Image[];
+  /** Text to display on hover of the carousel. */
   hoverText: string;
 }
 
+/** Data object to represent images in the ImageCarousel. */
 export class Image {
+  /** Source of the image. Can be local or http url. */
   src: string;
+  /** Alt text to display when the image is not visible & read by screen readers. */
   alt: string;
 
   constructor(src: string, alt: string) {
@@ -18,16 +23,16 @@ export class Image {
   }
 }
 
+/**
+ * An common image carousel component.
+ *
+ * This allows display of multiple images, with radio buttons for displaying each image.
+ *
+ * @param props {@link Props}
+ * @returns JSX element of component
+ */
 const ImageCarousel = (props: Props) => {
   const [imageIndex, setImageIndex] = useState(0);
-
-  /**
-   *
-   * @param imgIndex
-   */
-  function onImageChanged(imgIndex: number) {
-    setImageIndex(imgIndex);
-  }
 
   // original image resolution: 4/3
   // original image size: 4032x3024
@@ -54,7 +59,7 @@ const ImageCarousel = (props: Props) => {
                 type="radio"
                 name="currImg"
                 defaultChecked={index === imageIndex}
-                onChange={() => onImageChanged(index)}
+                onChange={() => setImageIndex(index)}
               />
               <span className={styles["custom-radio"]} />
             </span>
