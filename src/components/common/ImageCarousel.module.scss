@@ -1,0 +1,106 @@
+@use "../../styles/theme";
+
+.image-carousel {
+  justify-content: center;
+  margin: 2rem 0;
+
+  .image-holder {
+    display: inline-block;
+    position: relative;
+
+    .image {
+      border: 4px solid theme.$CHARCOAL;
+      border-radius: 5rem;
+    }
+
+    .hover {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 4px;
+      top: 0;
+      z-index: 10;
+      border-radius: 5rem;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 2.5rem;
+
+      visibility: hidden;
+      opacity: 0;
+      transition:
+        visibility 0s linear 500ms,
+        opacity 500ms;
+
+      color: white;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 50%,
+        theme.$CHARCOAL 85%,
+        theme.$CHARCOAL 100%
+      );
+      font-size: 0.75rem;
+      white-space: pre-line;
+    }
+  }
+
+  .image-holder:hover .hover {
+    visibility: visible;
+    opacity: 1;
+    transition:
+      visibility 0s linear 0ms,
+      opacity 500ms;
+  }
+
+  .radio-buttons {
+    padding-top: 1rem;
+
+    .radio-btn-holder {
+      position: relative;
+      margin: 0 6px;
+
+      %radio-button {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        box-sizing: border-box;
+        height: 14px;
+        width: 14px;
+        border-radius: 50%;
+        border: 2px solid theme.$CHARCOAL;
+      }
+
+      input {
+        @extend %radio-button;
+        position: relative;
+        cursor: pointer;
+        // hide the browsers default radio btn
+        opacity: 0;
+        margin: 0;
+      }
+
+      .custom-radio {
+        @extend %radio-button;
+        pointer-events: none;
+        display: inline-block;
+      }
+
+      .custom-radio:after {
+        @extend %radio-button;
+        content: "";
+        display: none;
+        background-color: theme.$CHARCOAL;
+
+        // compensate for the border on the parent
+        top: -2px;
+        left: -2px;
+      }
+
+      input:checked ~ .custom-radio:after {
+        display: block;
+      }
+    }
+  }
+}

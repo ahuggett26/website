@@ -14,13 +14,13 @@ My secondary education took place at [Sackville School, East Grinstead](https://
 
 ## GCSEs
 
-I have 14 GCSEs from A*-D, including: 
+I have 14 GCSEs from A\*-D, including:
 
-- Mathematics: A*
-- Further Mathematics: A*
+- Mathematics: A\*
+- Further Mathematics: A\*
 - Information and Communication Technology: A
 - Physics: A
-- Biology: A*
+- Biology: A\*
 - Chemistry: A
 - English Language: A
-- English Literature: A*
+- English Literature: A\*

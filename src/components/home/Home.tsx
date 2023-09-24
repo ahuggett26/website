@@ -1,19 +1,24 @@
-import { Component } from 'react';
-import { Outlet } from 'react-router-dom';
-import './Home.scss';
-import Header from './header/Header';
+import { Outlet } from "react-router-dom";
+import Header from "./header/Header";
+import styles from "./Home.module.scss";
 
-class Home extends Component {
-  render() {
-    return (
-      <div className='home-container'>
-        <Header/>
-        <div className='home-page-contents'>
-          <Outlet/>
-        </div>
+/**
+ * Primary home page containing the header and contents.
+ *
+ * Not every page might want to share this view's layout.
+ * If it does, it should have navigation links so it is accessible throughout the 'home' view.
+ *
+ * @returns JSX element of component
+ */
+const Home = () => {
+  return (
+    <div className={styles["home-container"]}>
+      <Header />
+      <div className={styles["home-page-contents"]}>
+        <Outlet />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Home;

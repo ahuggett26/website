@@ -1,0 +1,16 @@
+@use "../../../styles/theme";
+
+.about-container {
+  padding: 2rem 0;
+  text-align: center;
+
+  p {
+    box-sizing: border-box;
+    width: min(65rem, 100%);
+    margin: auto;
+    padding: 0.5rem 1rem;
+
+    color: theme.$CHARCOAL;
+    font-size: 1.125rem;
+  }
+}

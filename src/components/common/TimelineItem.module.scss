@@ -1,0 +1,45 @@
+@use "../../styles/theme";
+
+.timeline-dates {
+  padding: 1rem;
+
+  font-family: "Patrick Hand", cursive;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.timeline-center {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .timeline-icon {
+    width: 3rem;
+    height: 3rem;
+    border: 3px solid theme.$CHARCOAL;
+    border-radius: 50%;
+    margin: auto;
+    cursor: pointer;
+  }
+
+  .timeline-icon-active {
+    @extend .timeline-icon;
+    width: 4rem;
+    height: 4rem;
+    border: 5px solid theme.$CHARCOAL;
+    box-shadow: 0 4px 4px 0 theme.$STEEL_BLUE;
+    cursor: default;
+  }
+
+  .timeline-pointer {
+    height: 1px;
+    width: 16px;
+    visibility: hidden;
+  }
+
+  .timeline-pointer-active {
+    @extend .timeline-pointer;
+    background-color: theme.$CHARCOAL;
+    visibility: visible;
+  }
+}

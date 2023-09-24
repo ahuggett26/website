@@ -1,72 +1,73 @@
-import { Component } from "react";
-import './ImageCarousel.scss';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
-
-interface State {
-    imageIndex: number;
-}
+import { useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import styles from "./ImageCarousel.module.scss";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 interface Props {
-    images: Image[];
-    hoverText: String;
+  /** All images that should be inside the image carousel. */
+  images: Image[];
+  /** Text to display on hover of the carousel. */
+  hoverText: string;
 }
 
+/** Data object to represent images in the ImageCarousel. */
 export class Image {
-    src: string;
-    alt: string;
+  /** Source of the image. Can be local or http url. */
+  src: string;
+  /** Alt text to display when the image is not visible & read by screen readers. */
+  alt: string;
 
-    constructor(src: string, alt: string) {
-        this.src = src;
-        this.alt = alt;
-    }
+  constructor(src: string, alt: string) {
+    this.src = src;
+    this.alt = alt;
+  }
 }
 
-class ImageCarousel extends Component<Props, State> {
-    constructor(props: Props) {
-        super(props);
-        this.state = { imageIndex: 0 }
-    }
+/**
+ * An common image carousel component.
+ *
+ * This allows display of multiple images, with radio buttons for displaying each image.
+ *
+ * @param props {@link Props}
+ * @returns JSX element of component
+ */
+const ImageCarousel = (props: Props) => {
+  const [imageIndex, setImageIndex] = useState(0);
 
-    onImageChanged(imgIndex: number) {
-        this.setState({imageIndex: imgIndex});
-    }
-
-    render() {
-        // original image resolution: 4/3
-        // original image size: 4032x3024
-        // current image resolution: 16/9
-        // current image size: 1344x756
-        const image = this.props.images[this.state.imageIndex];
-        return (
-            <div className="image-carousel">
-                <div className="image-carousel-image-holder">
-                    <LazyLoadImage
-                        className="image-carousel-image"
-                        src={image.src}
-                        alt={image.alt}
-                        effect="blur"/>
-                    <div className="image-carousel-hover">
-                        {this.props.hoverText}
-                    </div>
-                </div>
-                <div className="image-carousel-radio-buttons">
-                    {this.props.images.map((_img, index) => {
-                        const key = "image-carousel-radio-" + index;
-                        const radioBtn = index === this.state.imageIndex 
-                            ? <input type="radio" name="currImg" defaultChecked onChange={() => this.onImageChanged(index)}/>
-                            : <input type="radio" name="currImg" onChange={() => this.onImageChanged(index)}/>
-                        return (
-                            <span className="image-carousel-radio-btn-holder" key={key}>
-                                {radioBtn}
-                                <span className="image-carousel-custom-radio"/>
-                            </span>
-                        )
-                    })}
-                </div>
-            </div>
-        );
-    }
-}
+  // original image resolution: 4/3
+  // original image size: 4032x3024
+  // current image resolution: 16/9
+  // current image size: 1344x756
+  const image = props.images[imageIndex];
+  return (
+    <div className={styles["image-carousel"]}>
+      <div className={styles["image-holder"]}>
+        <LazyLoadImage
+          className={styles.image}
+          src={image.src}
+          alt={image.alt}
+          effect="blur"
+        />
+        <div className={styles.hover}>{props.hoverText}</div>
+      </div>
+      <div className={styles["radio-buttons"]}>
+        {props.images.map((_img, index) => {
+          const key = "image-carousel-radio-" + index;
+          return (
+            <span className={styles["radio-btn-holder"]} key={key}>
+              <input
+                type="radio"
+                name="currImg"
+                defaultChecked={index === imageIndex}
+                onChange={() => setImageIndex(index)}
+              />
+              <span className={styles["custom-radio"]} />
+            </span>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
 export default ImageCarousel;

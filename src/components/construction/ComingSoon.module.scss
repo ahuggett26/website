@@ -1,0 +1,68 @@
+@use "../../styles/theme";
+
+.construction-container {
+  display: flex;
+  justify-content: center;
+
+  .info {
+    text-align: center;
+    padding: 5rem 0;
+    margin: 5rem 0;
+    display: inline-block;
+    border: 0.5rem solid black;
+    border-radius: 5rem;
+    background: white;
+    z-index: 10;
+
+    .construction-emoji {
+      font-size: 5rem;
+      padding: 2rem 0;
+    }
+
+    .title {
+      color: theme.$CHARCOAL;
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .description {
+      color: theme.$CHARCOAL;
+      font-size: 1.2rem;
+      padding: 0 2rem;
+    }
+  }
+}
+
+$construction-orange: #ffad60e0;
+$construction-black: rgba(0, 0, 0, 0.4);
+
+.background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  animation: movingConstructionBackground 120s linear 0s infinite
+    alternate-reverse;
+
+  background-size: 100% 1000%;
+  background-image: repeating-linear-gradient(
+    135deg,
+    $construction-black 0,
+    $construction-black 99px,
+    $construction-orange 100px,
+    $construction-orange 299px,
+    $construction-black 300px,
+    $construction-black 400px
+  );
+}
+
+@keyframes movingConstructionBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
