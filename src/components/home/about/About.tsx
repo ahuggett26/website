@@ -41,7 +41,9 @@ const About = () => {
         <br />I currently work for Diffblue, an Oxford based company that
         produces AI for code.
       </p>
-      <ImageCarousel images={images} hoverText={hoverText} />
+      <div className={styles["image-carousel"]}>
+        <ImageCarousel images={images} hoverText={hoverText} />
+      </div>
       <p>
         I work across the tech stack, but my expertise is in on the front-end,
         in particular with user-facing code. Java is my most used language, but
