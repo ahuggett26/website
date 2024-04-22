@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div className={styles["home-container"]}>
       <Header />
-      <div className={styles["home-page-contents"]}>
+      <div>
         <Outlet />
       </div>
     </div>

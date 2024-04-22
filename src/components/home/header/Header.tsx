@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
 import styles from "./Header.module.scss";
+import HeaderLong from "./HeaderLong";
+import HeaderShort from "./HeaderShort";
 
 /**
  * The header to display at the top of each page.
@@ -11,23 +12,12 @@ import styles from "./Header.module.scss";
 const Header = () => {
   return (
     <header className={styles.container}>
-      <h1 className={styles.title}>ahuggett.uk</h1>
-      <nav className={styles["tabs-holder"]}>
-        <ul className={styles.tabs}>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/education">Education</Link>
-          </li>
-          <li>
-            <Link to="/experience">Experience</Link>
-          </li>
-          <li>
-            <Link to="/portfolio">Portfolio</Link>
-          </li>
-        </ul>
-      </nav>
+      <div className={styles["header-full"]}>
+        <HeaderLong />
+      </div>
+      <div className={styles["header-short"]}>
+        <HeaderShort />
+      </div>
     </header>
   );
 };
