@@ -1,7 +1,17 @@
 .experience-container {
   height: 100%;
-  width: 50%;
+  width: 60%;
 
   margin: auto;
   padding: 2rem 0;
+
+  @media (width <= 1200px) {
+    width: 75%;
+  }
+  @media (width <= 1000px) {
+    width: 90%;
+  }
+  @media (width <= 750px) {
+    width: 100%;
+  }
 }

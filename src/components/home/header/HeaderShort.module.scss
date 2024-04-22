@@ -1,0 +1,54 @@
+@use "../../../styles/theme";
+
+.title {
+  display: inline-block;
+  font-family: "Patrick Hand", cursive;
+  font-size: 3rem;
+  margin: 0;
+  padding: 1rem 0;
+  user-select: none;
+
+  @media (width < 400px) {
+    font-size: 2.5rem;
+  }
+  @media (width < 300px) {
+    font-size: 2rem;
+  }
+}
+
+.menu-button {
+  background: white;
+  border: 1px solid theme.$CHARCOAL;
+  border-radius: 0.75rem;
+  font-size: 1.25rem;
+  height: 2.25rem;
+  width: 2.25rem;
+  cursor: pointer;
+
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+}
+
+.menu {
+  background: white;
+  border: 1px solid theme.$CHARCOAL;
+  border-radius: 0.5rem;
+
+  position: absolute;
+  top: calc(100% - 1rem);
+  right: 1rem;
+
+  hr {
+    margin: 0;
+  }
+
+  .menu-link {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    color: theme.$CHARCOAL;
+    font-weight: bold;
+  }
+}
