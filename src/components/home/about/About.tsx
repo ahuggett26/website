@@ -31,15 +31,14 @@ const About = () => {
     new Image(image8, "A lake in Vancouver"),
   ];
   const hoverText =
-    "I don't take any selfies, so here are some of my favourite pictures that I've taken on my travels recently." +
-    "\nI'm also not the best photographer, as you can probably see!";
+    "Here are some of my favourite pictures that I've taken on my travels.";
   return (
     <div className={styles["about-container"]}>
       <p>
-        Hi! My name is Andrew Huggett, I am a software engineer from West
-        Sussex, in the south of England.
+        My name is Andrew Huggett, I am a software engineer from the south of
+        England.
         <br />I currently work for Diffblue, an Oxford based company that
-        produces AI for code.
+        produces an AI unit test writing solution for Java and Kotlin projects.
       </p>
       <div className={styles["image-carousel"]}>
         <ImageCarousel images={images} hoverText={hoverText} />
@@ -47,21 +46,18 @@ const About = () => {
       <p>
         I work across the tech stack, but my expertise is in on the front-end,
         in particular with user-facing code. Java is my most used language, but
-        I am well versed in TypeScript, HTML and CSS.
+        I am well versed in TypeScript, HTML, CSS & Kotlin, among others.
       </p>
       <p>
-        During my weekends and days off, I have a range of personal projects
-        that I work on. More recently I made more of an effort to “complete”
-        these: take a look at the Portfolio tab for an overview. I only have a
-        certain amount of time though; I find that there is always more that I
-        want to do, than what I have time for 😅
+        During my weekends and days off, I have a range of personal coding
+        projects that I work on. Take a look at the Portfolio tab (coming soon)
+        for a look at some of these projects.
       </p>
       <p>
-        One of my main joys in life is football - most weekends I make my way
-        down to Brighton with my dad to watch the game. I have been a Brighton
-        fan since we got promoted from League 1 at the Withdean and a season
-        ticket holder since we moved to Falmer in 2011, and the matches remain
-        one of the highlights of my week.
+        One of my main joys in life is football. I have been a Brighton fan
+        since promotion from League 1 at the Withdean and a season ticket holder
+        since 2011. Whenever there is a home game, I try to make my way down to
+        the AMEX with my dad.
       </p>
     </div>
   );
