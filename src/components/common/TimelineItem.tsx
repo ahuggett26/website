@@ -6,7 +6,7 @@ import styles from "./TimelineItem.module.scss";
 /** Date formatting for the timeline instances. */
 const dateOptions: Intl.DateTimeFormatOptions = {
   year: "numeric",
-  month: "long",
+  month: "short",
 };
 
 interface Props {
