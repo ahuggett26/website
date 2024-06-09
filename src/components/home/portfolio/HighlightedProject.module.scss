@@ -1,0 +1,67 @@
+@use "../../../styles/theme";
+
+.highlight-display {
+  position: relative;
+  padding: 1rem;
+  width: 14rem;
+  border: solid theme.$CHARCOAL 1px;
+  background-color: theme.$CHARCOAL;
+  border-radius: 1rem;
+  color: theme.$LIGHT_CYAN;
+
+  .short-desc {
+    text-align: center;
+  }
+
+  .title {
+    margin: 0;
+    margin-top: 0.25rem;
+    text-align: center;
+  }
+
+  .img {
+    border-radius: 0.75rem;
+    width: 100%;
+  }
+
+  .tech-icons {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    display: flex;
+
+    background-color: white;
+    border-radius: 8px;
+    border: solid theme.$CHARCOAL 1px;
+
+    .icon {
+      margin: 4px;
+    }
+  }
+
+  @media (width <= 750px) {
+    display: none;
+  }
+}
+
+.highlight-display.primary-highlight {
+  width: 26rem;
+  display: block;
+}
+
+.dot-display {
+  display: none;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 1rem;
+  background-color: theme.$CHARCOAL;
+
+  @media (width <= 750px) {
+    display: block;
+  }
+}
+
+.dot-display.primary-highlight {
+  display: none;
+}
