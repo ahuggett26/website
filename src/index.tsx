@@ -8,12 +8,12 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import FieldClashersHome from "./components/apps/fieldClashers/FieldClashersHome";
-import ComingSoon from "./components/construction/ComingSoon";
 import Error from "./components/construction/Error";
 import About from "./components/home/about/About";
 import Education from "./components/home/education/Education";
 import Experience from "./components/home/experience/Experience";
 import Home from "./components/home/Home";
+import Portfolio from "./components/home/portfolio/Portfolio";
 import reportWebVitals from "./reportWebVitals";
 
 const router = createBrowserRouter([
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path: "portfolio",
-        element: <ComingSoon />,
+        element: <Portfolio />,
       },
     ],
   },
