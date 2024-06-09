@@ -1,0 +1,47 @@
+@use "../../../styles/theme";
+
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+
+  .highlights {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .progress-bar {
+    height: 6px;
+    width: 80%;
+    margin: 1rem auto;
+    background-color: theme.$LIGHT_CYAN;
+    border-radius: 3px;
+
+    .progress-bar-active {
+      height: 6px;
+      background-color: theme.$STEEL_BLUE;
+      border-radius: 3px;
+
+      animation-duration: 20s;
+      animation-name: progress-counter;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      @keyframes progress-counter {
+        from {
+          width: 0%;
+        }
+        to {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .grid {
+    margin-top: 4rem;
+  }
+}

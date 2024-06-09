@@ -1,0 +1,107 @@
+@use "../../../styles/theme";
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1001;
+
+  background: rgba($color: theme.$CHARCOAL, $alpha: 0.25);
+
+  .box {
+    position: relative;
+    height: calc(100vh - 10%);
+    width: min(50rem, calc(100% - 2rem));
+    margin: 5vh auto;
+
+    border: 1px solid theme.$CHARCOAL;
+    border-radius: 2rem;
+    background-color: white;
+    text-align: center;
+    overflow: auto;
+
+    .close-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      font-size: 1rem;
+    }
+
+    .technologies {
+      display: inline-block;
+      text-align: center;
+      margin: auto;
+      padding-bottom: 0.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+
+      border: 1px dotted theme.$CHARCOAL;
+      border-radius: 1rem;
+
+      .tech-list {
+        list-style-type: none;
+        padding-inline-start: 0;
+
+        .technology {
+          margin: 0.5rem 0;
+
+          .tech-icon {
+            margin-right: 0.5rem;
+          }
+
+          .tech-name {
+            vertical-align: top;
+          }
+        }
+      }
+    }
+
+    .short-technologies {
+      display: none;
+
+      @media (width <= 450px) {
+        display: block;
+      }
+    }
+
+    .hideable {
+      @media (width <= 450px) {
+        display: none;
+      }
+    }
+
+    .main-img {
+      display: block;
+      margin: auto;
+      margin-bottom: 1rem;
+      border: 1px solid theme.$CHARCOAL;
+      border-radius: 2rem;
+    }
+
+    .links {
+      text-align: center;
+      list-style-position: inside;
+
+      .link-list {
+        padding-right: 40px;
+      }
+
+      li {
+        line-break: anywhere;
+        @media (width <= 750px) {
+          list-style-type: none;
+        }
+      }
+    }
+
+    .long-desc {
+      padding: 0 1rem;
+    }
+  }
+}
