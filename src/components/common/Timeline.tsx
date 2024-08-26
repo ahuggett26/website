@@ -7,9 +7,9 @@ import TimelineItem from "./TimelineItem";
 /** Object representing an instance for display in the Timeline component */
 export class InstanceInTime {
   /** Date that the instance started. */
-  startDate: Date;
+  startDate: string;
   /** Date that the instance ended. If undefined, it is assumed the instance is ongoing. */
-  endDate: Date | undefined;
+  endDate: string | undefined;
   /** Icon representing the instance. */
   iconSrc: string;
   /** Background color for the icon. If undefined, no background is added. */
@@ -20,8 +20,8 @@ export class InstanceInTime {
   mdContents: string;
 
   constructor(
-    start: Date,
-    end: Date | undefined,
+    start: string,
+    end: string | undefined,
     icon: string,
     iconBack: string | undefined,
     iconPadding: boolean,

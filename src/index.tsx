@@ -10,6 +10,7 @@ import {
 import FieldClashersHome from "./components/apps/fieldClashers/FieldClashersHome";
 import Error from "./components/construction/Error";
 import About from "./components/home/about/About";
+import Contact from "./components/home/contact/Contact";
 import Education from "./components/home/education/Education";
 import Experience from "./components/home/experience/Experience";
 import Home from "./components/home/Home";
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
       },
       {
         path: "education",
