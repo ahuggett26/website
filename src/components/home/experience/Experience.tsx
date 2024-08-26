@@ -18,7 +18,7 @@ const Experience = () => {
 
   const educationInstances = [
     new InstanceInTime(
-      new Date("Mar 2022"),
+      "Mar 2022",
       undefined,
       diffblueLogo,
       "#002147",
@@ -26,8 +26,8 @@ const Experience = () => {
       diffblueMd,
     ),
     new InstanceInTime(
-      new Date("Oct 2018"),
-      new Date("Oct 2021"),
+      "Oct 2018",
+      "Oct 2021",
       googleLogo,
       undefined,
       true,

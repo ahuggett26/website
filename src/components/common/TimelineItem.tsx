@@ -3,12 +3,6 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { InstanceInTime } from "./Timeline";
 import styles from "./TimelineItem.module.scss";
 
-/** Date formatting for the timeline instances. */
-const dateOptions: Intl.DateTimeFormatOptions = {
-  year: "numeric",
-  month: "short",
-};
-
 interface Props {
   /** The timeline instance represented by this item. */
   instance: InstanceInTime;
@@ -34,12 +28,10 @@ const TimelineItem = (props: Props): JSX.Element => {
     <>
       {!props.selected ? null : (
         <div className={styles["timeline-dates"]}>
-          {props.instance.startDate.toLocaleDateString("en-GB", dateOptions)}
+          {props.instance.startDate}
           &nbsp; - &nbsp;
           <br />
-          {props.instance.endDate
-            ? props.instance.endDate.toLocaleDateString("en-GB", dateOptions)
-            : "current"}
+          {props.instance.endDate ?? "current"}
         </div>
       )}
 

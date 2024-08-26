@@ -18,16 +18,16 @@ const Education = () => {
 
   const educationInstances = [
     new InstanceInTime(
-      new Date("Oct 2018"),
-      new Date("Nov 2021"),
+      "Oct 2018",
+      "Nov 2021",
       adaLogo,
       undefined,
       false,
       degreeMd,
     ),
     new InstanceInTime(
-      new Date("Sep 2011"),
-      new Date("May 2018"),
+      "Sep 2011",
+      "May 2018",
       sackvilleLogo,
       undefined,
       true,
