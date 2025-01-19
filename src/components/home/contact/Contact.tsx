@@ -20,14 +20,14 @@ const Contact = () => {
       </p>
       <h2>Get in contact</h2>
       <p>
-        You can email me at the following address:{" "}
+        A proper contact page is on its way!
+        <br />
+        In the meantime, feel free to send me a message:{" "}
         <a href={`mailto:${email}`}>{email}</a>
-      </p>
-      <p>
-        <i>
-          Note: I have linked an email alias for potential spam protection.
-          Emails will be sent via the alias to my real address.
-        </i>
+        <br />
+        <br />
+        Note: For spam prevention, I have linked an aliased email address - once
+        this page is complete, the alias will be deleted.
       </p>
     </div>
   );
