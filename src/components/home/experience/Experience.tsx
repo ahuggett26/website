@@ -19,7 +19,7 @@ const Experience = () => {
   const educationInstances = [
     new InstanceInTime(
       "Mar 2022",
-      undefined,
+      "Aug 2025",
       diffblueLogo,
       "#002147",
       false,
