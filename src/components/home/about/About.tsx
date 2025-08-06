@@ -35,23 +35,29 @@ const About = () => {
   return (
     <div className={styles["about-container"]}>
       <p>
-        My name is Andrew Huggett, I am a software engineer from the south of
-        England.
-        <br />I currently work for Diffblue, an Oxford based company that
-        produces an AI unit test writing solution for Java and Kotlin projects.
+        My name is Andrew Huggett, I am a software engineer from the South East
+        of England.
       </p>
       <div className={styles["image-carousel"]}>
         <ImageCarousel images={images} hoverText={hoverText} />
       </div>
       <p>
         I work across the tech stack, but my expertise is in on the front-end,
-        in particular with user-facing code. Java is my most used language, but
-        I am well versed in TypeScript, HTML, CSS & Kotlin, among others.
+        in particular with user-facing code.
+      </p>
+      <p>
+        Java is my most used language, but I am well versed in TypeScript, HTML,
+        CSS & Kotlin, among others.
+      </p>
+      <p>
+        Some of the common frameworks I have used include ReactJS, Spring, Visx,
+        JUnit, Jasmine, Mockito. <br />I have worked on Web apps, Websites,
+        Android apps, Command Line Tools and even an IntelliJ plugin.
       </p>
       <p>
         During my weekends and days off, I have a range of personal coding
-        projects that I work on. Take a look at the Portfolio tab (coming soon)
-        for a look at some of these projects.
+        projects that I work on. Take a look at the Portfolio tab for a look at
+        some of these projects.
       </p>
       <p>
         One of my main joys in life is football. I have been a Brighton fan
