@@ -51,4 +51,8 @@
     color: theme.$CHARCOAL;
     font-weight: bold;
   }
+
+  :hover {
+    text-decoration: underline;
+  }
 }

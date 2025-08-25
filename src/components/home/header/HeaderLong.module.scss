@@ -29,5 +29,9 @@
       color: theme.$CHARCOAL;
       text-decoration: none;
     }
+
+    :hover {
+      text-decoration: underline;
+    }
   }
 }
