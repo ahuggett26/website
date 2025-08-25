@@ -103,6 +103,32 @@
       input:checked ~ .custom-radio:after {
         display: block;
       }
+
+      // Progress animation only for the next radio button
+      &.next-image .custom-radio {
+        background: conic-gradient(
+          theme.$CHARCOAL 0deg,
+          theme.$CHARCOAL calc(var(--anim-progress, 0) * 3.6deg),
+          transparent calc(var(--anim-progress, 0) * 3.6deg),
+          transparent 360deg
+        );
+        animation: 10s progress-fill linear;
+      }
     }
+  }
+}
+
+@property --anim-progress {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@keyframes progress-fill {
+  from {
+    --anim-progress: 0;
+  }
+  to {
+    --anim-progress: 100;
   }
 }

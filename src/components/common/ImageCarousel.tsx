@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import styles from "./ImageCarousel.module.scss";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -36,6 +36,8 @@ export class Image {
  */
 const ImageCarousel = (props: Props) => {
   const [imageIndex, setImageIndex] = useState(0);
+  const [animationKey, setAnimationKey] = useState(0);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Create a randomized index mapping if randomise is enabled
   const indexMapping = useMemo(() => {
@@ -44,6 +46,38 @@ const ImageCarousel = (props: Props) => {
     }
     return randomiseArrayIndices(props.images.length);
   }, [props.images, props.randomise]);
+
+  const nextImageIndex = (imageIndex + 1) % props.images.length;
+
+  // Auto-advance functionality
+  useEffect(() => {
+    if (props.images.length <= 1) return;
+
+    const startTimer = () => {
+      // Clear existing timer
+      if (timerRef.current) clearTimeout(timerRef.current);
+
+      // Restart CSS animation by changing key
+      setAnimationKey((prev) => prev + 1);
+
+      // Set timer for image advance
+      timerRef.current = setTimeout(() => {
+        setImageIndex((prev) => (prev + 1) % props.images.length);
+      }, 10000);
+    };
+
+    startTimer();
+
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, [imageIndex, props.images.length]);
+
+  const handleImageChange = (newIndex: number) => {
+    setImageIndex(newIndex);
+    // Reset animation by changing key
+    setAnimationKey((prev) => prev + 1);
+  };
 
   // original image resolution: 4/3
   // original image size: 4032x3024
@@ -65,13 +99,23 @@ const ImageCarousel = (props: Props) => {
       <div className={styles["radio-buttons"]}>
         {indexMapping.map((_mappedId, displayIndex) => {
           const key = "image-carousel-radio-" + displayIndex;
+          const holderClass =
+            displayIndex === nextImageIndex
+              ? `${styles["radio-btn-holder"]} ${styles["next-image"]}`
+              : styles["radio-btn-holder"];
+
           return (
-            <span className={styles["radio-btn-holder"]} key={key}>
+            <span
+              className={holderClass}
+              key={
+                displayIndex === nextImageIndex ? `${key}-${animationKey}` : key
+              } // Force re-render for animation restart
+            >
               <input
                 type="radio"
                 name="currImg"
-                defaultChecked={displayIndex === imageIndex}
-                onChange={() => setImageIndex(displayIndex)}
+                checked={displayIndex === imageIndex}
+                onChange={() => handleImageChange(displayIndex)}
               />
               <span className={styles["custom-radio"]} />
             </span>
