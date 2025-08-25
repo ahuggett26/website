@@ -11,7 +11,7 @@ import styles from "./HeaderLong.module.scss";
 const HeaderLong = () => {
   return (
     <>
-      <h1 className={styles.title}>ahuggett.uk</h1>
+      <h1 className={styles.title}>Andrew Huggett</h1>
       <nav className={styles["tabs-holder"]}>
         <ul className={styles.tabs}>
           <li>
