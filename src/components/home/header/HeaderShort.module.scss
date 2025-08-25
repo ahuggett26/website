@@ -2,14 +2,14 @@
 
 .title {
   display: inline-block;
-  font-family: "Patrick Hand", cursive;
-  font-size: 3rem;
+  font-family: "DM Serif Text", serif;
+  font-size: 2.5rem;
   margin: 0;
   padding: 1rem 0;
   user-select: none;
 
   @media (width < 400px) {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
   @media (width < 300px) {
     font-size: 2rem;
