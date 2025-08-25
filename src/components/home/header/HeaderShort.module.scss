@@ -17,9 +17,10 @@
 }
 
 .menu-button {
-  background: white;
-  border: 1px solid theme.$CHARCOAL;
-  border-radius: 0.75rem;
+  background: theme.$CHARCOAL;
+  border: none;
+  color: white;
+  border-radius: 2rem;
   font-size: 1.25rem;
   height: 2.25rem;
   width: 2.25rem;
