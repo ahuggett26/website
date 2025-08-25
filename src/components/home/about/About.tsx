@@ -39,7 +39,7 @@ const About = () => {
         of England.
       </p>
       <div className={styles["image-carousel"]}>
-        <ImageCarousel images={images} hoverText={hoverText} />
+        <ImageCarousel images={images} hoverText={hoverText} randomise />
       </div>
       <p>
         I work across the tech stack, but my expertise is in on the front-end,

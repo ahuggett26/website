@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import styles from "./ImageCarousel.module.scss";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import randomiseArrayIndices from "./randomise";
 
 interface Props {
   /** All images that should be inside the image carousel. */
   images: Image[];
   /** Text to display on hover of the carousel. */
   hoverText: string;
+  /** If true, randomise the input image array */
+  randomise?: boolean;
 }
 
 /** Data object to represent images in the ImageCarousel. */
@@ -34,11 +37,20 @@ export class Image {
 const ImageCarousel = (props: Props) => {
   const [imageIndex, setImageIndex] = useState(0);
 
+  // Create a randomized index mapping if randomise is enabled
+  const indexMapping = useMemo(() => {
+    if (!props.randomise) {
+      return props.images.map((_, index) => index);
+    }
+    return randomiseArrayIndices(props.images.length);
+  }, [props.images, props.randomise]);
+
   // original image resolution: 4/3
   // original image size: 4032x3024
   // current image resolution: 16/9
   // current image size: 1344x756
-  const image = props.images[imageIndex];
+  const mappedIndex = indexMapping[imageIndex];
+  const image = props.images[mappedIndex];
   return (
     <div className={styles["image-carousel"]}>
       <div className={styles["image-holder"]}>
@@ -51,15 +63,15 @@ const ImageCarousel = (props: Props) => {
         <div className={styles.hover}>{props.hoverText}</div>
       </div>
       <div className={styles["radio-buttons"]}>
-        {props.images.map((_img, index) => {
-          const key = "image-carousel-radio-" + index;
+        {indexMapping.map((_mappedId, displayIndex) => {
+          const key = "image-carousel-radio-" + displayIndex;
           return (
             <span className={styles["radio-btn-holder"]} key={key}>
               <input
                 type="radio"
                 name="currImg"
-                defaultChecked={index === imageIndex}
-                onChange={() => setImageIndex(index)}
+                defaultChecked={displayIndex === imageIndex}
+                onChange={() => setImageIndex(displayIndex)}
               />
               <span className={styles["custom-radio"]} />
             </span>
