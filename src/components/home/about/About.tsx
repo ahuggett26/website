@@ -31,7 +31,7 @@ const About = () => {
     new Image(image8, "A lake in Vancouver"),
   ];
   const hoverText =
-    "Here are some of my favourite pictures that I've taken on my travels.";
+    "Just a collection of some pictures that I've taken";
   return (
     <div className={styles["about-container"]}>
       <p>

@@ -27,7 +27,7 @@ const HeaderShort = () => {
 
   return (
     <span>
-      <h1 className={styles.title}>ahuggett.uk</h1>
+      <h1 className={styles.title}>Andrew Huggett</h1>
       <button
         className={styles["menu-button"]}
         onClick={() => setMenuOpen((isOpen) => !isOpen)}
