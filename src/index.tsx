@@ -11,6 +11,7 @@ import FieldClashersHome from "./components/apps/fieldClashers/FieldClashersHome
 import Error from "./components/construction/Error";
 import About from "./components/home/about/About";
 import Contact from "./components/home/contact/Contact";
+import CoverPage from "./components/home/cover/CoverPage";
 import Education from "./components/home/education/Education";
 import Experience from "./components/home/experience/Experience";
 import Home from "./components/home/Home";
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Navigate replace to="/about" />,
+        element: <Navigate replace to="/cover" />,
       },
       {
         path: "about",
@@ -50,18 +51,22 @@ const router = createBrowserRouter([
     ],
   },
   {
+    path: "cover",
+    element: <CoverPage />,
+  },
+  {
     path: "apps/field-clashers",
     element: <FieldClashersHome />,
   },
 ]);
 
 const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement,
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>,
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
