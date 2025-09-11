@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CoverPageContents from "./CoverPageContents";
 import MatrixCover from "./MatrixCover";
+import MovingGradientCover from "./MovingGradientCover";
 
 /**
  * Page containing contact details.
@@ -9,9 +10,9 @@ import MatrixCover from "./MatrixCover";
  */
 const CoverPage = () => {
   return (
-    <MatrixCover>
+    <MovingGradientCover>
       <CoverPageContents />
-    </MatrixCover>
+    </MovingGradientCover>
   );
 };
 
