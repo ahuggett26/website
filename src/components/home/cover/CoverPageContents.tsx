@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import javaLogo from "../../../resources/images/portfolio/icons/java-logo.svg";
@@ -14,11 +14,21 @@ import styles from "./CoverPageContents.module.scss";
  * @returns JSX element of component
  */
 const CoverPageContents = () => {
+
+  const [scrollHeight, setScrollHeight] = useState(0);
+
+  useEffect(() => {
+    document.title = "Andrew Huggett - Software Engineer";
+    window.addEventListener("scroll", () => {
+      setScrollHeight(window.scrollY);
+    });
+  }, []);
+
   return (
     <>
-      <div className={styles.primary}>
+      <div className={styles.primary} style={{ "--scroll-height": scrollHeight + "px", "--prompt-visibility": (scrollHeight > 0 ? "hidden" : "visible") } as React.CSSProperties}>
         <h1>Andrew Huggett</h1>
-        <h3>Software Engineer</h3>
+        <h2>Software Engineer</h2>
 
         <div className={styles["scroll-prompt"]}>
           <p>Scroll for more</p>
