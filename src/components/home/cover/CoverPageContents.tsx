@@ -16,17 +16,39 @@ import styles from "./CoverPageContents.module.scss";
 const CoverPageContents = () => {
 
   const [scrollHeight, setScrollHeight] = useState(0);
+  const [headerOpacity, setHeaderOpacity] = useState(0);
 
   useEffect(() => {
     document.title = "Andrew Huggett - Software Engineer";
+
     window.addEventListener("scroll", () => {
-      setScrollHeight(window.scrollY);
+      console.log("scrolling");
+      const scrollY = window.scrollY;
+      setScrollHeight(scrollY);
+
+      const vH = document.documentElement.clientHeight;
+      const minH = 160; // px
+      const half = vH / 2;
+      if (scrollY <= half) {
+        setHeaderOpacity(0);
+      } else if (scrollY >= vH - minH) {
+        setHeaderOpacity(1);
+      } else {
+        const range = vH - minH - half;
+        const newOpacity = (scrollY - half) / range;
+        setHeaderOpacity(newOpacity);
+      }
     });
   }, []);
 
   return (
     <>
-      <div className={styles.primary} style={{ "--scroll-height": scrollHeight + "px", "--prompt-visibility": (scrollHeight > 0 ? "hidden" : "visible") } as React.CSSProperties}>
+      <div className={styles.primary}
+        style={{
+          "--scroll-height": scrollHeight + "px",
+          "--prompt-visibility": (scrollHeight > 0 ? "hidden" : "visible"),
+          "--header-opacity": headerOpacity
+        } as React.CSSProperties}>
         <h1>Andrew Huggett</h1>
         <h2>Software Engineer</h2>
 
@@ -35,6 +57,7 @@ const CoverPageContents = () => {
           <i className="bi bi-chevron-double-down"></i>
         </div>
       </div>
+      <div className={styles["primary-flow"]}></div>
       <div className={styles.about}>
         <h2>About Me</h2>
         <p>
