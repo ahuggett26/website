@@ -66,8 +66,8 @@ const CoverPageContents = () => {
           <br />My experience includes roles at Google and Diffblue (an AI startup), as a full-stack developer, leaning towards front-end.
           <br />I am self-taught, but backed with a degree in Digital & Technology Solutions.
         </p>
-        <Link to="/about" className={styles.link}>
-          See full page
+        <Link to="/about" className={styles.navlink}>
+          See full website
           <i className="bi bi-arrow-right-short"></i>
         </Link>
       </div>
@@ -109,6 +109,10 @@ const CoverPageContents = () => {
             </div>
           ))}
         </div>
+        <Link to="/portfolio" className={styles.navlink}>
+          See full portfolio
+          <i className="bi bi-arrow-right-short"></i>
+        </Link>
       </div>
     </>
   );
