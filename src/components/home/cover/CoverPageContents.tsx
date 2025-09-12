@@ -61,12 +61,9 @@ const CoverPageContents = () => {
       <div className={styles.about}>
         <h2>About Me</h2>
         <p>
-          <i>TODO: This is written by copilot: review & rewrite</i><br />
-          Im a software engineer with a passion for creating efficient and
-          scalable applications. I enjoy working with modern technologies and
-          continuously learning to improve my skills. In my free time, I like to
-          explore new programming languages and frameworks, as well as contribute
-          to open-source projects.
+          I am a software engineer with a proficiency for Java and React with TypeScript.
+          <br />My experience includes roles at Google and Diffblue (an AI startup), as a full-stack developer, leaning towards front-end.
+          <br />I am self-taught, but backed with a degree in Digital & Technology Solutions.
         </p>
         <Link to="/about" className={styles.link}>
           See full page
