@@ -1,6 +1,4 @@
-import { useState } from "react";
 import CoverPageContents from "./CoverPageContents";
-import MatrixCover from "./MatrixCover";
 import MovingGradientCover from "./MovingGradientCover";
 
 /**
