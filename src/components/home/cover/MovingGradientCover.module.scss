@@ -1,0 +1,32 @@
+@use "../../../styles/theme";
+
+.container {
+    // background-repeat: repeat;
+    color: white;
+    user-select: none;
+    animation: moving-gradient 10s infinite linear forwards;
+    position: relative;
+    background: linear-gradient(
+        135deg, 
+        theme.$CHARCOAL 5%,
+        theme.$STEEL_BLUE 25%, 
+        theme.$CHARCOAL 45%,
+        theme.$CHARCOAL 55%,
+        theme.$STEEL_BLUE 75%, 
+        theme.$CHARCOAL 95%);
+    
+    background-size: 200% 200%;
+
+    // background-position: 100% 100%;
+    overflow-x: hidden;
+
+    @keyframes moving-gradient {
+        from {
+            background-position: 0% 0%;
+        }
+
+        to {
+            background-position: 100% 100%;
+        }
+    }
+}
