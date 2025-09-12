@@ -75,25 +75,25 @@ const CoverPageContents = () => {
         <h2>Key Skills</h2>
         <div className={styles["skill-wrapper"]}>
           <div className={styles.skill}>
-            <LazyLoadImage key="java_intro_icon" src={javaLogo} height={96} className={styles.icon} />
+            <LazyLoadImage key="java_intro_icon" src={javaLogo} className={styles.icon} />
             <h3>Java</h3>
           </div>
           <div className={styles.skill}>
-            <LazyLoadImage key="react_intro_icon" src={reactLogo} height={96} className={styles.icon} />
+            <LazyLoadImage key="react_intro_icon" src={reactLogo} className={styles.icon} />
             <h3>React</h3>
           </div>
           <div className={styles.skill}>
-            <LazyLoadImage key="ts_intro_icon" src={tsLogo} height={96} className={styles.icon} />
+            <LazyLoadImage key="ts_intro_icon" src={tsLogo} className={styles.icon} />
             <h3>TypeScript</h3>
           </div>
         </div>
         <div className={styles["skill-wrapper"]}>
           <div className={styles.skill}>
-            <LazyLoadImage key="sass_intro_icon" src={sassLogo} height={48} className={styles.icon} />
+            <LazyLoadImage key="sass_intro_icon" src={sassLogo} className={styles.miniicon} />
             <h3>Sass</h3>
           </div>
           <div className={styles.skill}>
-            <LazyLoadImage key="react_intro_icon" src={kotlinLogo} height={48} className={styles.icon} />
+            <LazyLoadImage key="react_intro_icon" src={kotlinLogo} className={styles.miniicon} />
             <h3>Kotlin</h3>
           </div>
         </div>

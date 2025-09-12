@@ -108,16 +108,47 @@ h2 {
     justify-content: space-around;
     margin: 4rem;
 
+    @media (width < 50em) {
+      margin: 2rem;
+    }
+
     .skill {
       border: white 1px dashed;
       border-radius: 8px;
       padding: 2rem;
+      width: 13rem;
+
+      @media (width < 50em) {
+        width: 8rem;
+        padding: 1rem;
+      }
+
+      .icon {
+        height: 6rem;
+
+        @media (width < 50em) {
+          height: 4rem;
+        }
+      }
+
+      .miniicon {
+        height: 4rem;
+
+        @media (width < 50em) {
+          height: 3rem;
+        }
+      }
 
       background: none;
 
       h3 {
         font-size: 1.5rem;
         margin: 0.5rem 0.5rem 0;
+
+        @media (width < 50em) {
+          font-size: 1rem;
+          margin: 0.5rem 0 0;
+        }
       }
     }
 
@@ -127,7 +158,11 @@ h2 {
       cursor: default;
     }
 
-    @media (width < 75em) {
+    @media (width < 50em) {
+      width: calc(100% - 4rem);
+    }
+
+    @media (50em < width < 75em) {
       width: calc(100% - 8rem);
     }
 
