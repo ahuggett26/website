@@ -150,3 +150,24 @@ h2 {
     }
   }
 }
+
+.projects {
+  text-align: center;
+  padding: 2rem 0;
+
+  .project-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+    gap: 4rem;
+
+    .project {
+      background-color: theme.$CHARCOAL;
+      border: 1px solid white;
+      border-radius: 1rem;
+      padding: 1rem;
+      width: 22.5rem;
+    }
+  }
+}

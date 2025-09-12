@@ -6,6 +6,7 @@ import kotlinLogo from "../../../resources/images/portfolio/icons/kotlin-logo.pn
 import reactLogo from "../../../resources/images/portfolio/icons/react-logo.svg";
 import sassLogo from "../../../resources/images/portfolio/icons/sass-logo-64.png";
 import tsLogo from "../../../resources/images/portfolio/icons/ts-logo-128.png";
+import { highlightProjects } from "../portfolio/projects/PortfolioProjects";
 import styles from "./CoverPageContents.module.scss";
 
 /**
@@ -99,17 +100,14 @@ const CoverPageContents = () => {
       </div>
       <div className={styles.projects}>
         <h2>Recent projects</h2>
-        <div className={styles.project}>
-          <LazyLoadImage key="java_intro_icon" src={javaLogo} height={96} className={styles.icon} />
-          <h3>My Website</h3>
-        </div>
-        <div className={styles.project}>
-          <LazyLoadImage key="react_intro_icon" src={reactLogo} height={96} className={styles.icon} />
-          <h3>Recipes Web App</h3>
-        </div>
-        <div className={styles.project}>
-          <LazyLoadImage key="ts_intro_icon" src={tsLogo} height={96} className={styles.icon} />
-          <h3>Field Clashers game</h3>
+        <div className={styles["project-wrapper"]}>
+          {highlightProjects.map((project) => (
+            <div key={project.title} className={styles.project}>
+              <LazyLoadImage key={project.title + "_icon"} src={project.backgroundImg} height={96} className={styles.icon} />
+              <h3>{project.title}</h3>
+              <p>{project.shortDesc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </>
