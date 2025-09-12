@@ -45,15 +45,23 @@ h2 {
   h1 {
     font-size: 5rem;
     margin: 0;
+
+    @media (width < 50em) {
+      font-size: 3rem;
+    }
   }
 
   h2 {
     margin: 0;
+
+    @media (width < 50em) {
+      font-size: 1.5rem;
+    }
   }
 
   .scroll-prompt {
     position: absolute;
-    top: calc(100vh - 5rem);
+    top: calc(100vh - 6rem);
     visibility: var(--prompt-visibility);
 
     font-family: Arial, Helvetica, sans-serif;
@@ -62,13 +70,17 @@ h2 {
 
     animation: prompt-bounce 1s linear infinite alternate;
 
+    p {
+      margin: 0.5rem 0;
+    }
+
     @keyframes prompt-bounce {
       from {
-        top: calc(100vh - 5rem);
+        top: calc(100vh - 6rem);
       }
 
       to {
-        top: calc(100vh - 5.5rem);
+        top: calc(100vh - 6.5rem);
       }
     }
   }
