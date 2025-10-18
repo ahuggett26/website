@@ -63,7 +63,7 @@ const CoverPageContents = () => {
         <h2>About Me</h2>
         <p>
           I am a software engineer with a proficiency for Java and React with TypeScript.
-          <br />My experience includes roles at Google and Diffblue (an AI startup), as a full-stack developer, leaning towards front-end.
+          <br />My experience includes roles at Google, Diffblue (an AI startup) and FlexTrade (finance). I work as a full-stack developer, leaning towards front-end.
           <br />I am self-taught, but backed with a degree in Digital & Technology Solutions.
         </p>
         <Link to="/about" className={styles.navlink}>
