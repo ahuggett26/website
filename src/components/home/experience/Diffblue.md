@@ -1,8 +1,10 @@
 # Diffblue
 
-## Software Engineer
+## Senior Software Engineer
 
 During my time there, Diffblue functioned with the mindset of an agile startup. Averaging around 40-50 employees, I was part of a small but cohesive unit that had its own primary responsibilities, whilst helping out across all products as needed.
+
+I joined as a Software Engineer I but was promoted twice in as many years, ending out the last year and a half as a Senior Software Engineer.
 
 At the core of Diffblue was [Cover](https://www.diffblue.com/products). This used a purpose-built AI solution to autonomously write Java unit tests. Diffblue offered a range of products and features to help utilise and compliment this core offering.
 

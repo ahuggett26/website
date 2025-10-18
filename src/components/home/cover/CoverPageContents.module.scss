@@ -124,15 +124,50 @@ h2 {
       margin: 2rem;
     }
 
-    .skill {
+    @mixin skill {
       border: white 1px dashed;
       border-radius: 8px;
       padding: 2rem;
+      background: none;
+
+      @media (width < 50em) {
+        padding: 1rem;
+      }
+    }
+
+    .small-skill {
+      @include skill;
+      width: 11rem;
+
+      @media (width < 50em) {
+        width: 6rem;
+      }
+
+      .icon {
+        height: 4rem;
+
+        @media (width < 50em) {
+          height: 3rem;
+        }
+      }
+
+      h3 {
+        font-size: 1.25rem;
+        margin: 0.25rem 0.25rem 0;
+
+        @media (width < 50em) {
+          font-size: 0.75rem;
+          margin: 0.25rem 0 0;
+        }
+      }
+    }
+
+    .big-skill {
+      @include skill;
       width: 13rem;
 
       @media (width < 50em) {
         width: 8rem;
-        padding: 1rem;
       }
 
       .icon {
@@ -142,16 +177,6 @@ h2 {
           height: 4rem;
         }
       }
-
-      .miniicon {
-        height: 4rem;
-
-        @media (width < 50em) {
-          height: 3rem;
-        }
-      }
-
-      background: none;
 
       h3 {
         font-size: 1.5rem;

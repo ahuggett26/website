@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import diffblueLogo from "../../../resources/images/experience/diffblue-logo.svg";
+import flextradeLogo from "../../../resources/images/experience/flextrade-logo.png";
 import googleLogo from "../../../resources/images/experience/google-logo.svg";
 import Timeline, { InstanceInTime } from "../../common/Timeline";
 import diffblueMd from "./Diffblue.md";
 import styles from "./Experience.module.scss";
+import flextradeMd from "./Flextrade.md";
 import googleMd from "./Google.md";
 
 /**
@@ -17,6 +19,14 @@ const Experience = () => {
   });
 
   const educationInstances = [
+    new InstanceInTime(
+      "Sep 2025",
+      undefined,
+      flextradeLogo,
+      undefined,
+      false,
+      flextradeMd,
+    ),
     new InstanceInTime(
       "Mar 2022",
       "Aug 2025",
