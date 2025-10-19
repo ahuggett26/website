@@ -15,6 +15,7 @@
     height: calc(100vh - 10%);
     width: min(50rem, calc(100% - 2rem));
     margin: 5vh auto;
+    padding-bottom: 1rem;
 
     border: 1px solid theme.$CHARCOAL;
     border-radius: 2rem;
@@ -65,13 +66,13 @@
     .short-technologies {
       display: none;
 
-      @media (width <= 450px) {
+      @media (width <=450px) {
         display: block;
       }
     }
 
     .hideable {
-      @media (width <= 450px) {
+      @media (width <=450px) {
         display: none;
       }
     }
@@ -84,24 +85,45 @@
       border-radius: 2rem;
     }
 
-    .links {
+    .key-features {
+      padding: 0 0.5rem;
       text-align: center;
       list-style-position: inside;
-
-      .link-list {
-        padding-right: 40px;
-      }
-
-      li {
-        line-break: anywhere;
-        @media (width <= 750px) {
-          list-style-type: none;
-        }
-      }
     }
 
-    .long-desc {
+    p {
       padding: 0 1rem;
+    }
+
+    .link-wrapper {
+      padding: 0.25rem 0;
+    }
+
+    @mixin link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+    }
+
+    .github-link {
+      @include link();
+      background-color: #24292f;
+      color: white;
+    }
+
+    .deployment-link {
+      @include link();
+      background-color: theme.$PERSIAN_RED;
+      color: white;
+    }
+
+    .docs-link {
+      @include link();
+      background-color: theme.$STEEL_BLUE;
+      color: white;
     }
   }
 }

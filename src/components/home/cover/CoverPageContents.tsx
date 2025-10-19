@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-import javaLogo from "../../../resources/images/portfolio/icons/java-logo.svg";
-import kotlinLogo from "../../../resources/images/portfolio/icons/kotlin-logo.png";
-import reactLogo from "../../../resources/images/portfolio/icons/react-logo.svg";
-import sassLogo from "../../../resources/images/portfolio/icons/sass-logo-64.png";
-import scalaLogo from "../../../resources/images/portfolio/icons/scala-logo.png";
-import tsLogo from "../../../resources/images/portfolio/icons/ts-logo-128.png";
 import { highlightProjects } from "../portfolio/projects/PortfolioProjects";
+import { TJava, TKotlin, TReact, TSass, TScala, TTypeScript } from "../portfolio/projects/Technology";
 import styles from "./CoverPageContents.module.scss";
 
 /**
@@ -75,32 +70,20 @@ const CoverPageContents = () => {
       <div className={styles.skills}>
         <h2>Key Skills</h2>
         <div className={styles["skill-wrapper"]}>
-          <div className={styles["big-skill"]}>
-            <LazyLoadImage key="java_intro_icon" src={javaLogo} className={styles.icon} />
-            <h3>Java</h3>
-          </div>
-          <div className={styles["big-skill"]}>
-            <LazyLoadImage key="react_intro_icon" src={reactLogo} className={styles.icon} />
-            <h3>React</h3>
-          </div>
-          <div className={styles["big-skill"]}>
-            <LazyLoadImage key="ts_intro_icon" src={tsLogo} className={styles.icon} />
-            <h3>TypeScript</h3>
-          </div>
+          {[new TJava(), new TReact(), new TTypeScript()].map(tech => (
+            <div key={`${tech.name}_skill`} className={styles["big-skill"]}>
+              <LazyLoadImage key={`${tech.name}_intro_icon`} src={tech.iconSrc} className={styles.icon} />
+              <h3>{tech.name}</h3>
+            </div>
+          ))}
         </div>
         <div className={styles["skill-wrapper"]}>
-          <div className={styles["small-skill"]}>
-            <LazyLoadImage key="sass_intro_icon" src={sassLogo} className={styles.icon} />
-            <h3>Sass</h3>
-          </div>
-          <div className={styles["small-skill"]}>
-            <LazyLoadImage key="react_intro_icon" src={kotlinLogo} className={styles.icon} />
-            <h3>Kotlin</h3>
-          </div>
-          <div className={styles["small-skill"]}>
-            <LazyLoadImage key="scala_intro_icon" src={scalaLogo} className={styles.icon} />
-            <h3>Scala</h3>
-          </div>
+          {[new TSass(), new TKotlin(), new TScala()].map(tech => (
+            <div key={`${tech.name}_skill`} className={styles["small-skill"]}>
+              <LazyLoadImage key={`${tech.name}_intro_icon`} src={tech.iconSrc} className={styles.icon} />
+              <h3>{tech.name}</h3>
+            </div>
+          ))}
         </div>
       </div>
       <div className={styles.projects}>

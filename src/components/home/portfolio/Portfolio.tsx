@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import FullProjectDisplay from "./FullProjectDisplay";
 import HighlightedProject from "./HighlightedProject";
 import styles from "./Portfolio.module.scss";
 import PortfolioProject from "./projects/PortfolioProject";
-import { highlightProjects } from "./projects/PortfolioProjects";
+import { highlightProjects, portfolioProjects } from "./projects/PortfolioProjects";
 
 /**
  * Portfolio page containing completed projects to show off.
@@ -36,6 +37,22 @@ const Portfolio = () => {
           className={styles["progress-bar-active"]}
           onAnimationIteration={iterateKeyHighlight}
         ></div>
+      </div>
+
+      <div className={styles["all-projects"]}>
+        <h3>All Projects</h3>
+        <div className={styles.grid}>
+          {/* TODO: add custom sorting dropdown (e.g A-Z, Z-A, newest, oldest) */}
+          {portfolioProjects
+            .sort((a, b) => a.title.localeCompare(b.title))
+            .map((project) => (
+              <div key={project.title} onClick={() => setFocussedProject(project)} className={styles.project}>
+                <LazyLoadImage className={styles.image} src={project.backgroundImg} />
+                <h4>{project.title}</h4>
+                <p>{project.shortDesc}</p>
+              </div>
+            ))}
+        </div>
       </div>
 
       <div className={styles["single-full-screen"]}>

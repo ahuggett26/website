@@ -8,6 +8,7 @@
   background-color: theme.$CHARCOAL;
   border-radius: 1rem;
   color: theme.$LIGHT_CYAN;
+  cursor: pointer;
 
   .short-desc {
     text-align: center;
@@ -17,6 +18,10 @@
     margin: 0;
     margin-top: 0.25rem;
     text-align: center;
+
+    @media (width <=450px) {
+      font-size: 1.75rem;
+    }
   }
 
   .img {
@@ -40,7 +45,7 @@
     }
   }
 
-  @media (width <= 750px) {
+  @media (width <=750px) {
     display: none;
   }
 }
@@ -57,7 +62,7 @@
   border-radius: 1rem;
   background-color: theme.$CHARCOAL;
 
-  @media (width <= 750px) {
+  @media (width <=750px) {
     display: block;
   }
 }
