@@ -1,5 +1,6 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
+import githubLogoWhite from "../../../resources/images/portfolio/icons/github-logo-white.svg";
 import styles from "./FullProjectDisplay.module.scss";
 import PortfolioProject from "./projects/PortfolioProject";
 
@@ -23,9 +24,6 @@ const FullProjectDisplay = (props: Properties) => {
   if (!props.project) {
     return null;
   }
-  const links =
-    [props.project.githubLink, props.project.deploymentLink, props.project.docsLink]
-      .filter((link) => link !== undefined);
   return (
     <div className={styles.background} onClick={props.closeProject}>
       <div className={styles.box} onClick={(e) => e.stopPropagation()}>
@@ -40,6 +38,7 @@ const FullProjectDisplay = (props: Properties) => {
             width={400}
             height={200}
           />
+          <p>{props.project.longDesc ?? props.project.shortDesc}</p>
         </div>
         <p>
           Last updated:{" "}
@@ -70,9 +69,6 @@ const FullProjectDisplay = (props: Properties) => {
           Technologies:{" "}
           {props.project.technologies.map((tech) => tech.name).join(", ")}
         </div>
-        <div className={styles.hideable}>
-          <p>{props.project.longDesc ?? props.project.shortDesc}</p>
-        </div>
         <h3>Key Features:</h3>
         <ul className={styles["key-features"]}>
           {props.project.keyFeatures.map((feature) => (
@@ -91,22 +87,33 @@ const FullProjectDisplay = (props: Properties) => {
             <p>{props.project.implDetails}</p>
           </>
         )}
-        {links.length > 0 && (
-          <div className={styles.links}>
-            <hr />
-            <p>See also:</p>
-            <ul className={styles["link-list"]}>
-              {links.map((link) => (
-                <li key={link}>
-                  <a href={link}>{link}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        {createLinkElement("github-link", <LazyLoadImage src={githubLogoWhite} height={20} />, "View Code on GitHub", props.project.githubLink)}
+        {createLinkElement("deployment-link", <i className="bi bi-rocket-takeoff-fill" />, "View Latest Deployment", props.project.deploymentLink)}
+        {createLinkElement("docs-link", <i className="bi bi-journal-text" />, "View Documentation", props.project.docsLink)}
       </div>
     </div>
   );
 };
+
+/**
+ * Function to create a generic link element for the project display.
+ * 
+ * @param className The class name to apply to the link
+ * @param icon The icon to display alongside the link text
+ * @param linkText The text to display for the link
+ * @param linkUrl The URL the link should point to.
+ * @returns A JSX element for the link, or null if no linkUrl is provided
+ */
+function createLinkElement(className: string, icon: JSX.Element, linkText: string, linkUrl?: string) {
+  if (!linkUrl) return null;
+  return (
+    <div className={styles["link-wrapper"]}>
+      <a href={linkUrl} target="_blank" rel="noopener noreferrer" className={styles[className]}>
+        {icon}
+        {linkText}
+      </a>
+    </div>
+  );
+}
 
 export default FullProjectDisplay;
