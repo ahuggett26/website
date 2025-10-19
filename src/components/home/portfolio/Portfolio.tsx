@@ -47,7 +47,7 @@ const Portfolio = () => {
             .sort((a, b) => a.title.localeCompare(b.title))
             .map((project) => (
               <div key={project.title} onClick={() => setFocussedProject(project)} className={styles.project}>
-                <LazyLoadImage src={project.backgroundImg} height={80} />
+                <LazyLoadImage className={styles.image} src={project.backgroundImg} />
                 <h4>{project.title}</h4>
                 <p>{project.shortDesc}</p>
               </div>
