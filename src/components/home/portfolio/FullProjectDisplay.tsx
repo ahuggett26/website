@@ -23,15 +23,17 @@ const FullProjectDisplay = (props: Properties) => {
   if (!props.project) {
     return null;
   }
+  const links =
+    [props.project.githubLink, props.project.deploymentLink, props.project.docsLink]
+      .filter((link) => link !== undefined);
   return (
     <div className={styles.background} onClick={props.closeProject}>
       <div className={styles.box} onClick={(e) => e.stopPropagation()}>
         <button className={styles["close-button"]} onClick={props.closeProject}>
           <i className="bi bi-x-circle"></i>
         </button>
-        <h3>{props.project.title}</h3>
+        <h2>{props.project.title}</h2>
         <div className={styles.hideable}>
-          <p>{props.project.shortDesc}</p>
           <LazyLoadImage
             className={styles["main-img"]}
             src={props.project.backgroundImg}
@@ -68,17 +70,33 @@ const FullProjectDisplay = (props: Properties) => {
           Technologies:{" "}
           {props.project.technologies.map((tech) => tech.name).join(", ")}
         </div>
-        <div className={styles["long-desc"]}>
-          {props.project.longDesc.map((desc, i) => (
-            <p key={`para-${i}`}>{desc}</p>
-          ))}
+        <div className={styles.hideable}>
+          <p>{props.project.longDesc ?? props.project.shortDesc}</p>
         </div>
-        {props.project.links.length > 0 && (
+        <h3>Key Features:</h3>
+        <ul className={styles["key-features"]}>
+          {props.project.keyFeatures.map((feature) => (
+            <li key={feature}>{feature}</li>
+          ))}
+        </ul>
+        {props.project.motivation && (
+          <>
+            <h3>Motivation:</h3>
+            <p>{props.project.motivation}</p>
+          </>
+        )}
+        {props.project.implDetails && (
+          <>
+            <h3>Implementation Details:</h3>
+            <p>{props.project.implDetails}</p>
+          </>
+        )}
+        {links.length > 0 && (
           <div className={styles.links}>
             <hr />
             <p>See also:</p>
             <ul className={styles["link-list"]}>
-              {props.project.links.map((link) => (
+              {links.map((link) => (
                 <li key={link}>
                   <a href={link}>{link}</a>
                 </li>

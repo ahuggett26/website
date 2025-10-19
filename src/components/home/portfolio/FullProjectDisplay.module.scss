@@ -65,13 +65,13 @@
     .short-technologies {
       display: none;
 
-      @media (width <= 450px) {
+      @media (width <=450px) {
         display: block;
       }
     }
 
     .hideable {
-      @media (width <= 450px) {
+      @media (width <=450px) {
         display: none;
       }
     }
@@ -84,6 +84,16 @@
       border-radius: 2rem;
     }
 
+    .key-features {
+      padding: 0 0.5rem;
+      text-align: center;
+      list-style-position: inside;
+    }
+
+    p {
+      padding: 0 1rem;
+    }
+
     .links {
       text-align: center;
       list-style-position: inside;
@@ -94,14 +104,11 @@
 
       li {
         line-break: anywhere;
-        @media (width <= 750px) {
+
+        @media (width <=750px) {
           list-style-type: none;
         }
       }
-    }
-
-    .long-desc {
-      padding: 0 1rem;
     }
   }
 }
