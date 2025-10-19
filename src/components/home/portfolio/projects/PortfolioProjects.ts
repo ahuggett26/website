@@ -1,5 +1,6 @@
 import FieldClashersProject from "./impl/FieldClashersProject";
 import RecipesProject from "./impl/RecipesProject";
+import SunlightHoursProject from "./impl/SunlightHoursProject";
 import WebsiteProject from "./impl/WebsiteProject";
 import PortfolioProject from "./PortfolioProject";
 
@@ -22,5 +23,7 @@ highlightProjects.push(recipes);
 const fieldClashers = new FieldClashersProject();
 portfolioProjects.push(fieldClashers);
 highlightProjects.push(fieldClashers);
+
+portfolioProjects.push(new SunlightHoursProject());
 
 export { portfolioProjects, highlightProjects };
