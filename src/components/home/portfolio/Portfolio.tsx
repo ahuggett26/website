@@ -42,8 +42,9 @@ const Portfolio = () => {
       <div className={styles["all-projects"]}>
         <h3>All Projects</h3>
         <div className={styles.grid}>
+          {/* TODO: add custom sorting dropdown (e.g A-Z, Z-A, newest, oldest) */}
           {portfolioProjects
-            .sort((a, b) => b.lastUpdated.getTime() - a.lastUpdated.getTime())
+            .sort((a, b) => a.title.localeCompare(b.title))
             .map((project) => (
               <div key={project.title} onClick={() => setFocussedProject(project)} className={styles.project}>
                 <LazyLoadImage src={project.backgroundImg} height={80} />
