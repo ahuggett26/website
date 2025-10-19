@@ -30,10 +30,12 @@
       animation-name: progress-counter;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
+
       @keyframes progress-counter {
         from {
           width: 0%;
         }
+
         to {
           width: 100%;
         }
@@ -41,7 +43,38 @@
     }
   }
 
-  .grid {
-    margin-top: 4rem;
+  .all-projects {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 0 1rem;
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3rem;
+
+      @media (width <=750px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      @media (750px <=width <=1250px) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      .project {
+        padding: 1rem;
+        border: 1px dotted theme.$CHARCOAL;
+
+        h4 {
+          margin: 0.25rem 0;
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+    }
   }
 }
