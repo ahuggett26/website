@@ -7,7 +7,6 @@ import styles from "./Contact.module.scss";
  * @returns JSX element of component
  */
 const Contact = () => {
-  const email = "ahuggett.process316@passinbox.com";
   const cvTitle = "Andrew Huggett CV";
   return (
     <div className={styles.container}>
@@ -18,17 +17,27 @@ const Contact = () => {
           {cvTitle}
         </a>
       </p>
-      <h2>Get in contact</h2>
-      <p>
-        A proper contact page is on its way!
-        <br />
-        In the meantime, feel free to send me a message:{" "}
-        <a href={`mailto:${email}`}>{email}</a>
-        <br />
-        <br />
-        Note: For spam prevention, I have linked an aliased email address - once
-        this page is complete, the alias will be deleted.
-      </p>
+      <h2>Social media</h2>
+      <p>I am generally not active on any social media, but feel free to connect via linkedin:</p>
+      <a href="https://www.linkedin.com/in/ajhuggett/" target="_blank" rel="noreferrer">linkedin.com/in/ajhuggett</a>
+      <h2>Contact me</h2>
+      <p>Or send me a message using the below form and I&apos;ll email back</p>
+      <form name="contact" className={styles["contact-form"]} method="POST" data-netlify="true">
+        <label htmlFor="email">Your Name</label>
+        <input type="text" name="name" />
+
+        <label htmlFor="email">Your Email</label>
+        <input type="email" name="email" />
+
+        <label htmlFor="subject">Subject</label>
+        <input type="text" name="subject" />
+
+        <label htmlFor="message">Message</label>
+        <textarea name="message"></textarea>
+
+        <button type="submit" className={styles.submit}>Send</button>
+      </form>
+      <p className={styles.ps}>P.S please don&apos;t try sell me your services for improving my website or SEO - I&apos;m not interested!</p>
     </div>
   );
 };
