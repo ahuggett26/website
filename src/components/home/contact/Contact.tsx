@@ -74,6 +74,8 @@ const Contact = () => {
         <p className={styles["char-limit-prompt"]}>500 chars max</p>
         {messageValid.length > 0 && messageValid !== "<init>" && <p className={styles.warning}>{messageValid}</p>}
 
+        <input type="hidden" name="form-name" value="ajh-contact-form" />
+
         <button disabled={anyInvalid} type="submit" className={styles.submit}>Send</button>
       </form>
       <p className={styles.ps}>P.S please don&apos;t try sell me your services for improving my website or SEO - I&apos;m not interested!</p>
