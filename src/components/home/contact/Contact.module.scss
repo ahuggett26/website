@@ -1,4 +1,107 @@
+@use "../../../styles/theme";
+
 .container {
   margin: 3rem 0;
   text-align: center;
+
+  .cv-last-update {
+    font-size: 0.875rem;
+    font-style: italic;
+    margin-top: 0.5rem;
+  }
+
+  .contact-form {
+    margin-top: 1rem;
+    margin: auto;
+    padding: 1rem;
+    border: 1px dashed black;
+    border-radius: 1rem;
+    width: 50%;
+
+    @media (450px <=width <=750px) {
+      width: 75%;
+    }
+
+    @media (width <=450px) {
+      width: 95%;
+    }
+
+    label,
+    input {
+      display: block;
+      text-align: center;
+    }
+
+    input {
+      margin: auto;
+      margin-bottom: 1rem;
+      width: 50%;
+
+      @media (width <=450px) {
+        width: 80%;
+      }
+
+      &:invalid {
+        color: red;
+      }
+    }
+
+    textarea {
+      display: block;
+      margin: auto;
+      width: 80%;
+      height: 150px;
+
+      @media (width <=450px) {
+        width: 95%;
+      }
+    }
+
+    .char-limit-prompt {
+      font-size: 0.75rem;
+      font-style: italic;
+      margin-bottom: 1rem;
+      width: 80%;
+      margin: auto;
+      text-align: left;
+
+      @media (width <=450px) {
+        width: 95%;
+      }
+    }
+
+    .warning {
+      color: red;
+      font-size: 0.875rem;
+      margin-top: -1rem;
+      margin-bottom: 1rem;
+    }
+
+    .submit {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      background-color: theme.$STEEL_BLUE;
+      color: white;
+      cursor: pointer;
+
+      &:disabled {
+        background-color: grey;
+        cursor: not-allowed;
+
+        &:hover {
+          background-color: grey;
+        }
+      }
+
+      &:hover {
+        background-color: black;
+      }
+    }
+  }
+
+  .ps {
+    font-size: 0.875rem;
+    font-style: italic;
+  }
 }
