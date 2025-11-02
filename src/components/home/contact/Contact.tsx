@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import cv from "../../../resources/pdf/CV.pdf";
 import styles from "./Contact.module.scss";
 
@@ -8,6 +9,7 @@ import styles from "./Contact.module.scss";
  * @returns JSX element of component
  */
 const Contact = () => {
+  const navigate = useNavigate();
   const [emailValid, setEmailValid] = useState("<init>");
   const [nameValid, setNameValid] = useState("<init>");
   const [subjectValid, setSubjectValid] = useState("<init>");
@@ -37,6 +39,34 @@ const Contact = () => {
     setMessageValid(message.reportValidity() ? "" : message.validationMessage);
   }
 
+  const getElement = (elemId: string) => {
+    const elemVal = (document.getElementById(elemId) as HTMLInputElement).value;
+    return encodeURIComponent(elemVal)
+  }
+
+  function handleSubmit(evt: React.FormEvent<HTMLFormElement>) {
+    const body = `
+      form-name=ajh-contact-form
+      &name=${getElement("name-inp")}
+      &email=${getElement("email-inp")}
+      &subject=${getElement("subj-inp")}
+      &message=${getElement("message-inp")}
+    `;
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body
+    })
+      .then(() => {
+        alert("Message sent successfully.\n You will be redirected to the home page.");
+        navigate("/");
+      })
+      .catch(() => alert("Something went wrong submitting the form. Please try again later."));
+
+    evt.preventDefault();
+  }
+
   const anyInvalid = [emailValid, nameValid, subjectValid, messageValid]
     .find((val) => val.length > 0) !== undefined;
 
@@ -56,7 +86,7 @@ const Contact = () => {
       <a href="https://www.linkedin.com/in/ajhuggett/" target="_blank" rel="noreferrer">linkedin.com/in/ajhuggett</a>
       <h2>Contact me</h2>
       <p>Or send me a message using the below form and I&apos;ll email back</p>
-      <form name="contact" className={styles["contact-form"]} method="POST" data-netlify="true">
+      <form name="contact" className={styles["contact-form"]} onSubmit={handleSubmit}>
         <label htmlFor="name">Your Name</label>
         <input id="name-inp" type="text" name="name" required maxLength={50} onChange={validateName} />
         {nameValid.length > 0 && nameValid !== "<init>" && <p className={styles.warning}>{nameValid}</p>}
@@ -73,8 +103,6 @@ const Contact = () => {
         <textarea id="message-inp" name="message" spellCheck required maxLength={500} onChange={validateMessage}></textarea>
         <p className={styles["char-limit-prompt"]}>500 chars max</p>
         {messageValid.length > 0 && messageValid !== "<init>" && <p className={styles.warning}>{messageValid}</p>}
-
-        <input type="hidden" name="form-name" value="ajh-contact-form" />
 
         <button disabled={anyInvalid} type="submit" className={styles.submit}>Send</button>
       </form>
