@@ -34,18 +34,41 @@
       @media (width <=450px) {
         width: 80%;
       }
+
+      &:invalid {
+        color: red;
+      }
     }
 
     textarea {
       display: block;
       margin: auto;
-      margin-bottom: 1rem;
       width: 80%;
       height: 150px;
 
       @media (width <=450px) {
         width: 95%;
       }
+    }
+
+    .char-limit-prompt {
+      font-size: 0.75rem;
+      font-style: italic;
+      margin-bottom: 1rem;
+      width: 80%;
+      margin: auto;
+      text-align: left;
+
+      @media (width <=450px) {
+        width: 95%;
+      }
+    }
+
+    .warning {
+      color: red;
+      font-size: 0.875rem;
+      margin-top: -1rem;
+      margin-bottom: 1rem;
     }
 
     .submit {
@@ -55,6 +78,15 @@
       background-color: theme.$STEEL_BLUE;
       color: white;
       cursor: pointer;
+
+      &:disabled {
+        background-color: grey;
+        cursor: not-allowed;
+
+        &:hover {
+          background-color: grey;
+        }
+      }
 
       &:hover {
         background-color: black;
