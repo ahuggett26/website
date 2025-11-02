@@ -45,18 +45,16 @@ const Contact = () => {
   }
 
   function handleSubmit(evt: React.FormEvent<HTMLFormElement>) {
-    const body = `
-      form-name=ajh-contact-form
-      &name=${getElement("name-inp")}
-      &email=${getElement("email-inp")}
-      &subject=${getElement("subj-inp")}
-      &message=${getElement("message-inp")}
-    `;
-
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body
+      body: JSON.stringify({
+        "form-name": "ajh-contact-form",
+        name: getElement("name-inp"),
+        email: getElement("email-inp"),
+        subject: getElement("subj-inp"),
+        message: getElement("message-inp"),
+      })
     })
       .then(() => {
         alert("Message sent successfully.\n You will be redirected to the home page.");
@@ -74,19 +72,21 @@ const Contact = () => {
   return (
     <div className={styles.container}>
       <h2>More information</h2>
-      <p>
+      <div>
         Download a public copy of my CV here:{" "}
         <a href={cv} download={cvTitle}>
           {cvTitle}
         </a>
         <p className={styles["cv-last-update"]}>Last updated: 6th August 2025</p>
-      </p>
+      </div>
       <h2>Social media</h2>
       <p>I am generally not active on any social media, but feel free to connect via linkedin:</p>
       <a href="https://www.linkedin.com/in/ajhuggett/" target="_blank" rel="noreferrer">linkedin.com/in/ajhuggett</a>
       <h2>Contact me</h2>
       <p>Or send me a message using the below form and I&apos;ll email back</p>
-      <form name="contact" className={styles["contact-form"]} onSubmit={handleSubmit}>
+      <form name="ajh-contact-form" className={styles["contact-form"]} onSubmit={handleSubmit} data-netlify={true}>
+        <input type="hidden" name="form-name" value="ajh-contact-form" />
+
         <label htmlFor="name">Your Name</label>
         <input id="name-inp" type="text" name="name" required maxLength={50} onChange={validateName} />
         {nameValid.length > 0 && nameValid !== "<init>" && <p className={styles.warning}>{nameValid}</p>}
