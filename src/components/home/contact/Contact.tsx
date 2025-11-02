@@ -49,6 +49,7 @@ const Contact = () => {
         <a href={cv} download={cvTitle}>
           {cvTitle}
         </a>
+        <p className={styles["cv-last-update"]}>Last updated: 6th August 2025</p>
       </p>
       <h2>Social media</h2>
       <p>I am generally not active on any social media, but feel free to connect via linkedin:</p>
