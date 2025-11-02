@@ -16,25 +16,21 @@ const Contact = () => {
   const [messageValid, setMessageValid] = useState("<init>");
 
   function validateEmail() {
-    console.log("validating email");
     const email = (document.getElementById("email-inp") as HTMLInputElement);
     setEmailValid(email.reportValidity() ? "" : email.validationMessage);
   }
 
   function validateName() {
-    console.log("validating name");
     const name = (document.getElementById("name-inp") as HTMLInputElement);
     setNameValid(name.reportValidity() ? "" : name.validationMessage);
   }
 
   function validateSubject() {
-    console.log("validating subject");
     const subject = (document.getElementById("subj-inp") as HTMLInputElement);
     setSubjectValid(subject.reportValidity() ? "" : subject.validationMessage);
   }
 
   function validateMessage() {
-    console.log("validating email");
     const message = (document.getElementById("message-inp") as HTMLInputElement);
     setMessageValid(message.reportValidity() ? "" : message.validationMessage);
   }
