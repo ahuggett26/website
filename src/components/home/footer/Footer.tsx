@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./Footer.module.scss";
 
 /**
@@ -7,12 +7,16 @@ import styles from "./Footer.module.scss";
  * @returns JSX element of component
  */
 const Footer = () => {
+  const location = useLocation();
+
+  if (location.pathname === "/contact") {
+    return <></>;
+  }
   return (
     <>
       <hr />
       <p className={styles["footer-details"]}>
-        <Link to="/contact">Click here</Link> for my condensed CV & contact
-        details
+        <Link to="/contact">Contact Me</Link>
       </p>
     </>
   );
