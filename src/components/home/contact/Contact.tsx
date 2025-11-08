@@ -1,3 +1,4 @@
+import emailjs from '@emailjs/browser';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import cv from "../../../resources/pdf/CV.pdf";
@@ -36,27 +37,33 @@ const Contact = () => {
   }
 
   const getElement = (elemId: string) => {
-    const elemVal = (document.getElementById(elemId) as HTMLInputElement).value;
-    return encodeURIComponent(elemVal)
+    return (document.getElementById(elemId) as HTMLInputElement).value;
   }
 
   function handleSubmit(evt: React.FormEvent<HTMLFormElement>) {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: JSON.stringify({
-        "form-name": "ajh-contact-form",
-        name: getElement("name-inp"),
-        email: getElement("email-inp"),
-        subject: getElement("subj-inp"),
-        message: getElement("message-inp"),
-      })
-    })
-      .then(() => {
-        alert("Message sent successfully.\n You will be redirected to the home page.");
-        navigate("/");
-      })
-      .catch(() => alert("Something went wrong submitting the form. Please try again later."));
+    const submissionDetails = {
+      subject: getElement("subj-inp"),
+      name: getElement("name-inp"),
+      time: new Date().toString(),
+      message: getElement("message-inp"),
+      email: getElement("email-inp"),
+    };
+    emailjs.send(
+      process.env.REACT_APP_EMAIL_JS_SERVICE_ID ?? "",
+      process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID ?? "",
+      submissionDetails)
+      .then(
+        (response) => {
+          alert("Message sent successfully.\n You will be redirected to the home page.");
+          console.log(response.status + " status: Contact form submitted. " + response.text);
+          navigate("/");
+        },
+        (error) => {
+          alert("Something went wrong submitting the form. Please try again later.");
+          console.error("Failed to submit form:", error);
+          console.error("Form details:", submissionDetails);
+        }
+      )
 
     evt.preventDefault();
   }
@@ -80,9 +87,7 @@ const Contact = () => {
       <a href="https://www.linkedin.com/in/ajhuggett/" target="_blank" rel="noreferrer">linkedin.com/in/ajhuggett</a>
       <h2>Contact me</h2>
       <p>Or send me a message using the below form and I&apos;ll email back</p>
-      <form name="ajh-contact-form" className={styles["contact-form"]} onSubmit={handleSubmit} data-netlify={true}>
-        <input type="hidden" name="form-name" value="ajh-contact-form" />
-
+      <form name="ajh-contact-form" className={styles["contact-form"]} onSubmit={handleSubmit}>
         <label htmlFor="name">Your Name</label>
         <input id="name-inp" type="text" name="name" required maxLength={50} onChange={validateName} />
         {nameValid.length > 0 && nameValid !== "<init>" && <p className={styles.warning}>{nameValid}</p>}

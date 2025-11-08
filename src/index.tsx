@@ -1,3 +1,4 @@
+import emailjs from '@emailjs/browser';
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -59,6 +60,17 @@ const router = createBrowserRouter([
     element: <FieldClashersHome />,
   },
 ]);
+
+emailjs.init({
+  publicKey: process.env.REACT_APP_EMAIL_JS_PUBLIC_KEY,
+  blockHeadless: true,
+  limitRate: {
+    // Set the limit rate for the application
+    id: 'app',
+    // Allow 1 request per minute
+    throttle: 60000,
+  },
+})
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
