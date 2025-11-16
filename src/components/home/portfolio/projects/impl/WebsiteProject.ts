@@ -24,7 +24,7 @@ class WebsiteProject implements PortfolioProject {
     technologies = [new TReact(), new TTypeScript(), new TSass()];
     backgroundImg = websiteImage;
     githubLink = "https://github.com/ahuggett26/website";
-    lastUpdated = new Date("19 October 2025");
+    lastUpdated = new Date("16 November 2025");
 }
 
 export default WebsiteProject;
