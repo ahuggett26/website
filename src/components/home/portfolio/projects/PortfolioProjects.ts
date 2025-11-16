@@ -2,6 +2,7 @@ import FieldClashersProject from "./impl/FieldClashersProject";
 import RecipesProject from "./impl/RecipesProject";
 import SunlightHoursProject from "./impl/SunlightHoursProject";
 import WebsiteProject from "./impl/WebsiteProject";
+import WordGuesserProject from "./impl/WordGuesserProject";
 import PortfolioProject from "./PortfolioProject";
 
 /** All portfolio projects to be displayed in the portfolio page. */
@@ -25,5 +26,6 @@ portfolioProjects.push(fieldClashers);
 highlightProjects.push(fieldClashers);
 
 portfolioProjects.push(new SunlightHoursProject());
+portfolioProjects.push(new WordGuesserProject());
 
 export { portfolioProjects, highlightProjects };

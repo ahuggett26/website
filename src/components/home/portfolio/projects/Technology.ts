@@ -59,6 +59,11 @@ export class TScala implements Technology {
   name = "Scala";
 }
 
+export class TSwing implements Technology {
+  iconSrc = javaLogo;
+  name = "Java Swing";
+}
+
 export class TTypeScript implements Technology {
   iconSrc = tsLogo;
   name = "TypeScript";
