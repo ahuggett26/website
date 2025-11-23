@@ -1,6 +1,7 @@
 import CommuteComputeProject from "./impl/CommuteComputeProject";
 import FieldClashersProject from "./impl/FieldClashersProject";
 import RecipesProject from "./impl/RecipesProject";
+import ShoppingListProject from "./impl/ShoppingListProject";
 import SunlightHoursProject from "./impl/SunlightHoursProject";
 import WebsiteProject from "./impl/WebsiteProject";
 import WordGuesserProject from "./impl/WordGuesserProject";
@@ -27,6 +28,7 @@ portfolioProjects.push(fieldClashers);
 highlightProjects.push(fieldClashers);
 
 portfolioProjects.push(new CommuteComputeProject());
+portfolioProjects.push(new ShoppingListProject());
 portfolioProjects.push(new SunlightHoursProject());
 portfolioProjects.push(new WordGuesserProject());
 

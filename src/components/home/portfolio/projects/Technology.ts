@@ -1,3 +1,4 @@
+import androidLogo from "../../../../resources/images/portfolio/icons/android-logo.svg";
 import bootstrapLogo from "../../../../resources/images/portfolio/icons/bootstrap-logo.svg";
 import cSharpLogo from "../../../../resources/images/portfolio/icons/csharp-logo.png";
 import firebaseLogo from "../../../../resources/images/portfolio/icons/firebase-logo.svg";
@@ -20,6 +21,11 @@ export interface Technology {
   iconSrc?: string;
   /** The name of the technology used. */
   name: string;
+}
+
+export class TAndroid implements Technology {
+  iconSrc = androidLogo;
+  name = "Android";
 }
 
 export class TBootstrap implements Technology {
