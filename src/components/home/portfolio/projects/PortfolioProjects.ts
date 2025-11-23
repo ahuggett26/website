@@ -1,5 +1,7 @@
+import CommuteComputeProject from "./impl/CommuteComputeProject";
 import FieldClashersProject from "./impl/FieldClashersProject";
 import RecipesProject from "./impl/RecipesProject";
+import ShoppingListProject from "./impl/ShoppingListProject";
 import SunlightHoursProject from "./impl/SunlightHoursProject";
 import WebsiteProject from "./impl/WebsiteProject";
 import WordGuesserProject from "./impl/WordGuesserProject";
@@ -13,18 +15,20 @@ const portfolioProjects: PortfolioProject[] = [];
  */
 const highlightProjects: PortfolioProject[] = [];
 
-const website = new WebsiteProject();
-portfolioProjects.push(website);
-highlightProjects.push(website);
+const highlight1 = new WebsiteProject();
+portfolioProjects.push(highlight1);
+highlightProjects.push(highlight1);
 
-const recipes = new RecipesProject();
-portfolioProjects.push(recipes);
-highlightProjects.push(recipes);
+const highlight2 = new RecipesProject();
+portfolioProjects.push(highlight2);
+highlightProjects.push(highlight2);
 
-const fieldClashers = new FieldClashersProject();
-portfolioProjects.push(fieldClashers);
-highlightProjects.push(fieldClashers);
+const highlight3 = new ShoppingListProject();
+portfolioProjects.push(highlight3);
+highlightProjects.push(highlight3);
 
+portfolioProjects.push(new CommuteComputeProject());
+portfolioProjects.push(new FieldClashersProject());
 portfolioProjects.push(new SunlightHoursProject());
 portfolioProjects.push(new WordGuesserProject());
 
