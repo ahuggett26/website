@@ -1,3 +1,4 @@
+import CommuteComputeProject from "./impl/CommuteComputeProject";
 import FieldClashersProject from "./impl/FieldClashersProject";
 import RecipesProject from "./impl/RecipesProject";
 import SunlightHoursProject from "./impl/SunlightHoursProject";
@@ -25,6 +26,7 @@ const fieldClashers = new FieldClashersProject();
 portfolioProjects.push(fieldClashers);
 highlightProjects.push(fieldClashers);
 
+portfolioProjects.push(new CommuteComputeProject());
 portfolioProjects.push(new SunlightHoursProject());
 portfolioProjects.push(new WordGuesserProject());
 
