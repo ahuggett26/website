@@ -1,6 +1,6 @@
 import recipesImage from "../../../../../resources/images/portfolio/recipes-app-cover-image.jpg";
 import PortfolioProject from "../PortfolioProject";
-import { TBootstrap, TFirebase, TReact } from "../Technology";
+import { TBootstrap, TFirebase, TReact, TTypeScript } from "../Technology";
 
 class RecipesProject implements PortfolioProject {
     title = "Recipe Catalog";
@@ -19,7 +19,7 @@ class RecipesProject implements PortfolioProject {
         it difficult to find specific recipes (especially given the ingredients I have
         available) and I found it sometimes difficult to replicate the recipes on my phone.
         This app seeks to solve these issues.`;
-    technologies = [new TReact(), new TFirebase(), new TBootstrap()];
+    technologies = [new TReact(), new TTypeScript(), new TFirebase(), new TBootstrap()];
     backgroundImg = recipesImage;
     githubLink = "https://github.com/ahuggett26/recipes-webapp";
     deploymentLink = "https://candid-semolina-352221.netlify.app/";
