@@ -1,14 +1,17 @@
 import androidLogo from "../../../../resources/images/portfolio/icons/android-logo.svg";
 import bootstrapLogo from "../../../../resources/images/portfolio/icons/bootstrap-logo.svg";
 import cSharpLogo from "../../../../resources/images/portfolio/icons/csharp-logo.png";
+import expressLogo from "../../../../resources/images/portfolio/icons/express-logo.svg";
 import firebaseLogo from "../../../../resources/images/portfolio/icons/firebase-logo.svg";
 import javaLogo from "../../../../resources/images/portfolio/icons/java-logo.svg";
 import kotlinLogo from "../../../../resources/images/portfolio/icons/kotlin-logo.png";
 import materialUiLogo from "../../../../resources/images/portfolio/icons/material-ui-logo.svg";
 import nextjsLogo from "../../../../resources/images/portfolio/icons/nextjs-logo.png";
+import nodejsLogo from "../../../../resources/images/portfolio/icons/nodejs-logo.svg";
 import reactLogo from "../../../../resources/images/portfolio/icons/react-logo.svg";
 import sassLogo from "../../../../resources/images/portfolio/icons/sass-logo-64.png";
 import scalaLogo from "../../../../resources/images/portfolio/icons/scala-logo.png";
+import sqliteLogo from "../../../../resources/images/portfolio/icons/sqlite-logo.svg";
 import tailwindCssLogo from "../../../../resources/images/portfolio/icons/tailwindcss-logo.svg";
 import tsLogo from "../../../../resources/images/portfolio/icons/ts-logo-128.png";
 import unityLogo from "../../../../resources/images/portfolio/icons/unity-logo.png";
@@ -38,6 +41,11 @@ export class TCSharp implements Technology {
   name = "C#";
 }
 
+export class TExpress implements Technology {
+  iconSrc = expressLogo;
+  name = "Express";
+}
+
 export class TFirebase implements Technology {
   iconSrc = firebaseLogo;
   name = "Firebase";
@@ -63,6 +71,11 @@ export class TNextJs implements Technology {
   name = "Next.js";
 }
 
+export class TNodeJs implements Technology {
+  iconSrc = nodejsLogo;
+  name = "Node.js";
+}
+
 export class TReact implements Technology {
   iconSrc = reactLogo;
   name = "React";
@@ -76,6 +89,11 @@ export class TSass implements Technology {
 export class TScala implements Technology {
   iconSrc = scalaLogo;
   name = "Scala";
+}
+
+export class TSqlite implements Technology {
+  iconSrc = sqliteLogo;
+  name = "SQLite";
 }
 
 export class TSwing implements Technology {
