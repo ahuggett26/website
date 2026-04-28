@@ -2,11 +2,13 @@ import { useEffect } from "react";
 import diffblueLogo from "../../../resources/images/experience/diffblue-logo.svg";
 import flextradeLogo from "../../../resources/images/experience/flextrade-logo.png";
 import googleLogo from "../../../resources/images/experience/google-logo.svg";
+import logmycareLogo from "../../../resources/images/experience/lmc-logo.png";
 import Timeline, { InstanceInTime } from "../../common/Timeline";
 import diffblueMd from "./Diffblue.md";
 import styles from "./Experience.module.scss";
 import flextradeMd from "./Flextrade.md";
 import googleMd from "./Google.md";
+import logmycareMd from "./LogMyCare.md";
 
 /**
  * A view for display at /education.
@@ -20,8 +22,16 @@ const Experience = () => {
 
   const educationInstances = [
     new InstanceInTime(
-      "Sep 2025",
+      "Apr 2026",
       undefined,
+      logmycareLogo,
+      undefined,
+      false,
+      logmycareMd,
+    ),
+    new InstanceInTime(
+      "Sep 2025",
+      "Apr 2026",
       flextradeLogo,
       undefined,
       false,
